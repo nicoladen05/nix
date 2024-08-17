@@ -131,6 +131,7 @@
     git
     stow
     gcc
+    kitty
   ];
 
   programs.zsh.enable = true;
