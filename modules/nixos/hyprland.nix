@@ -9,6 +9,10 @@
     pkgs.dunst
 
     pkgs.libnotify
+
+    pkgs.swww
+
+    pkgs.rofi-wayland
   ];
 
   programs.hyprland = {
@@ -25,4 +29,7 @@
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }
