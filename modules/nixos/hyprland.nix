@@ -1,6 +1,16 @@
 { lib, pkgs, ... }:
 
 {
+  environment.systemPackages = [
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+
+    pkgs.dunst
+
+    pkgs.libnotify
+  ];
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
