@@ -111,7 +111,7 @@
       discord spotify
 
       # Dev Tools
-      python3 python3-pip nodejs_22 cargo
+      python3 nodejs_22 cargo
 
       pavucontrol
       pamixer
