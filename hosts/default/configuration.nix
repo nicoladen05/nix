@@ -9,6 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+
+      ../../modules/nixos/hyprland.nix
+      ../../modules/nixos/stylix.nix
     ];
 
 
@@ -108,7 +111,12 @@
       discord spotify
 
       # Dev Tools
-      python3 nodejs_22 cargo
+      python3 python3-pip nodejs_22 cargo
+
+      pavucontrol
+      pamixer
+
+      mona-sans
     ];
   };
 
