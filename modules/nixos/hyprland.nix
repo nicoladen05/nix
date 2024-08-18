@@ -2,17 +2,11 @@
 
 {
   environment.systemPackages = [
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
-
-    pkgs.dunst
-
     pkgs.libnotify
 
-    pkgs.swww
-
     pkgs.rofi-wayland
+
+    pkgs.wl-clipboard
   ];
 
   programs.hyprland = {
