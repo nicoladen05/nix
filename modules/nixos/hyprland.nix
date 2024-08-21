@@ -2,9 +2,9 @@
 
 {
   environment.systemPackages = [
-    pkgs.libnotify
+    pkgs.swww
 
-    pkgs.rofi-wayland
+    pkgs.libnotify
 
     pkgs.wl-clipboard
   ];

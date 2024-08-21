@@ -5,7 +5,7 @@
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
 
-  stylix.image = /home/nico/Downloads/pexels-david-bartus-43782-4418939.jpg;
+  stylix.image = /home/nico/Downloads/gruvbox-mountain-village.png;
 
 
   stylix.cursor.package = pkgs.bibata-cursors;
@@ -33,7 +33,7 @@
 
   stylix.fonts.sizes = {
     terminal = 13;
-    desktop = 12;
+    desktop = 10;
     applications = 12;
   };
 }

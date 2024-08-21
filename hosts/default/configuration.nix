@@ -108,15 +108,12 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       # Essentials
-      discord spotify
+      pcmanfm discord spotify
 
       # Dev Tools
       python3 nodejs_22 cargo
 
-      pavucontrol
-      pamixer
-
-      mona-sans
+      pavucontrol pamixer
     ];
   };
 
