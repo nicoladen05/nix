@@ -32,6 +32,10 @@
   };
 
   programs.waybar.style = ''
+    * {
+      font-size: 14px;
+    }
+
     window#waybar {
       background-color: rgba(0,0,0,0);
     }

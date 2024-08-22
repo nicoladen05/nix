@@ -7,6 +7,7 @@
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/firefox.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -83,6 +84,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.firefox.enable = true;
 }
