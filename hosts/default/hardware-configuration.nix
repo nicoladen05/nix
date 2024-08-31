@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4ec0a69f-f5eb-4efe-b6ff-e846947b1a77";
@@ -22,6 +23,12 @@
     { device = "/dev/disk/by-uuid/3471-9C02";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/home/nico/data" =
+    { device = "/dev/nvme0n1p1";
+      fsType = "ntfs-3g";
+      options = [ "uid=1000" "gid=100" "rw" "user" "exec" "umask=000" ];
     };
 
   swapDevices = [ ];

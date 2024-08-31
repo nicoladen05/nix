@@ -9,10 +9,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ls = "ls --color";
-      ll = "ls -l --color";
+      ls = "eza --icons";
+      ll = "eza -l --icons";
 
       v = "nvim";
+      lg = "lazygit";
 
       rb = "sudo nixos-rebuild switch --flake ~/.config/nixos/#default";
       rt = "sudo nixos-rebuild test --flake ~/.config/nixos/#default";

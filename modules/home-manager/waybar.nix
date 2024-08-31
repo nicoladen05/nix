@@ -9,7 +9,7 @@
 
       modules-left = [ "clock" "custom/date" "custom/weather" ];
       modules-center = [ "hyprland/workspaces" ];
-      modules-right = [ "pulseaudio" ];
+      modules-right = [ "network" "pulseaudio" ];
 
       clock = {
         format = "󰥔  {:%H:%M}";
@@ -23,6 +23,15 @@
       "custom/weather" = {
         exec = "curl 'wttr.in/?format=3' | awk '{print $3,$4}' | sed 's/+//'";
         interval = 3600;
+      };
+
+      network = {
+        "format-disconnected" = "󰯡   Disconnected";
+        "format-ethernet" = "󰈀   Hydrogen";
+        "format-linked" = "󰖪  {essid} (No IP)";
+        "format-wifi" = "󰖩  {essid}";
+        "interval" = 1;
+        "tooltip" = false;
       };
 
       pulseaudio = {
@@ -57,7 +66,7 @@
       margin-right: 10px;
       margin-top: 10px;
       margin-bottom: 10px;
-      box-shadow: 0px 0px 8px -5px;
+      box-shadow: 0px 0px 6px -5px #000000;
     }
 
     #workspaces button.active{
@@ -77,7 +86,7 @@
       padding-right: 10px;
       padding-top: 10px;
       padding-bottom: 10px;
-      box-shadow: 0px 0px 6px -5px;
+      box-shadow: 0px 0px 6px -5px #000000;
     }
     
     .modules-left #custom-date{
@@ -92,7 +101,7 @@
       padding-right: 10px;
       padding-top: 10px;
       padding-bottom: 10px;
-      box-shadow: 0px 0px 6px -5px;
+      box-shadow: 0px 0px 6px -5px #000000;
     }
 
     .modules-left #custom-weather{
@@ -107,7 +116,22 @@
       padding-right: 10px;
       padding-top: 10px;
       padding-bottom: 10px;
-      box-shadow: 0px 0px 6px -5px;
+      box-shadow: 0px 0px 6px -5px #000000;
+    }
+
+    .modules-right #network {
+      border-radius: 8px;
+      background-color: @base08;
+      color: @base00;
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 0px 0px 6px -5px #000000;
     }
 
     .modules-right #pulseaudio{
@@ -115,15 +139,17 @@
       background-color: @base0B;
       color: @base00;
       margin-right: 16px;
-      margin-left: 10px;
+      margin-left: 5px;
       margin-top: 10px;
       margin-bottom: 10px;
       padding-left: 10px;
       padding-right: 10px;
       padding-top: 10px;
       padding-bottom: 10px;
-      box-shadow: 0px 0px 6px -5px;
+      box-shadow: 0px 0px 6px -5px #000000;
     }
 
   '';
+
+  services.playerctld.enable = true;
 }

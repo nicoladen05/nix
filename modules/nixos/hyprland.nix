@@ -21,4 +21,7 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  services.unclutter.enable = true;
+  services.unclutter.timeout = 3;
 }

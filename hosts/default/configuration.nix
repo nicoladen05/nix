@@ -110,10 +110,14 @@
       # Essentials
       pcmanfm discord spotify
 
+      steam-tui
+
       # Dev Tools
       python3 nodejs_22 cargo
 
       pavucontrol pamixer
+
+      lazygit
     ];
   };
 
@@ -134,12 +138,16 @@
     git
     stow
     gcc
-    kitty
+    playerctl
+    mangohud
+    eza
   ];
 
   programs.zsh.enable = true;
 
   programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

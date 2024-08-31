@@ -84,4 +84,18 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  xdg.userDirs = {
+    enable = true;
+    documents = "$HOME/docs";
+    download = "$HOME/dl";
+    videos = "$HOME/vids";
+    pictures = "$HOME/pics";
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "nicoladen05";
+    userEmail = "nicolashartmanntaba@gmail.com";
+  };
 }
