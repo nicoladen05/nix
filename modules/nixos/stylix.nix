@@ -1,4 +1,4 @@
-{ lib, pkgs, ...}:
+{ lib, pkgs, inputs, ...}:
 
 {
   stylix.enable = true;
@@ -41,12 +41,12 @@
       name = "JetBrainsMono Nerd Font Mono";
     };
     sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+      package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+      name = "SFProDisplay Nerd Font";
     };
     serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
+      package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+      name = "SFProDisplay Nerd Font";
     };
   };
 
