@@ -17,10 +17,10 @@
   
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      "DP-6, 2560x1440@165, 0x0, 1"
-      "HDMI-A-2, 1920x1080@75, -1080x0, 1, transform, 3"
-      "DP-6, addreserved, -10, 0, 0, 0"
-      "HDMI-A-2, addreserved, -10, 0, 0, 0"
+      "DP-3, 2560x1440@165, 0x0, 1"
+      "HDMI-A-1, 1920x1080@75, -1080x0, 1, transform, 3"
+      "DP-3, addreserved, -10, 0, 0, 0"
+      "HDMI-A-1, addreserved, -10, 0, 0, 0"
     ];
 
 

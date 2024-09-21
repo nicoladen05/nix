@@ -2,14 +2,14 @@
 
 {
   imports = [
-    # ../../modules/home-manager/hyprland.nix
-    # ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/zsh.nix
-    # ../../modules/home-manager/alacritty.nix
-    # ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/firefox.nix
 
-    ../../modules/home-manager/gnome.nix
+    # ../../modules/home-manager/gnome.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
