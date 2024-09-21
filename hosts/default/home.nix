@@ -8,6 +8,7 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/firefox.nix
+    ../../modules/home-manager/nixvim.nix
 
     # ../../modules/home-manager/gnome.nix
   ];

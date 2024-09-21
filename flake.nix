@@ -34,7 +34,7 @@
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        inputs.nixvim.nixosModules.nixvim
+        inputs.nixvim.homeManagerModules.nixvim
       ];
     };
   };
