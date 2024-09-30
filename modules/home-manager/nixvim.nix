@@ -1,7 +1,7 @@
-{ pkgs, lib, inputs, ... }
+{ pkgs, lib, inputs, ... }:
 
 {
-  nixvim = {
+  inputs.nixvim.homeManagerModules.nixvim = {
     enable = true;
     defaultEditor = false;
   };
