@@ -5,6 +5,13 @@
   config,
   ...
 }:
+
+let
+  wallpaper = pkgs.fetchurl {
+    url = "${config.desktop.stylix.wallpaper}";
+    sha256 = "${config.desktop.stylix.wallpaperHash}}";
+  };
+in
 {
   options = {
     desktop.stylix.enable = lib.mkEnableOption "enable stylix";
@@ -26,6 +33,13 @@
   };
 
   config = lib.mkIf config.desktop.stylix.enable {
+    # Generate colorscheme with matugen
+    programs.matugen = {
+      enable = true;
+      variant = "dark";
+      inherit wallpaper;
+    };
+
     stylix.enable = true;
     stylix.targets.console.enable = false;
 
@@ -57,10 +71,7 @@
     #   base0F = "B66467";
     # };
 
-    stylix.image = pkgs.fetchurl {
-      url = "${config.desktop.stylix.wallpaper}";
-      sha256 = "${config.desktop.stylix.wallpaperHash}}";
-    };
+    stylix.image = wallpaper;
 
     # stylix.cursor.package = pkgs.banana-cursor;
     # stylix.cursor.name = "Banana";

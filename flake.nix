@@ -35,6 +35,11 @@
 
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
 
+    matugen = {
+      url = "github:InioX/Matugen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,6 +72,7 @@
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
+          matugen.nixosModules.default
           nvf.nixosModules.default
         ];
       };
