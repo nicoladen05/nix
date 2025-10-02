@@ -41,8 +41,7 @@
     };
 
     apple-fonts = {
-      # url = "github:Lyndeno/apple-fonts.nix";
-      url = "github:momo-p/apple-fonts.nix";
+      url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
