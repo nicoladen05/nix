@@ -26,7 +26,7 @@ in
   config = lib.mkIf cfg.enable {
     nixpkgs.overlays = [
       (final: prev: {
-        botify = inputs.botify.packages.${final.system}.default;
+        botify = inputs.botify.packages.${final.hostPlatform.system}.default;
       })
     ];
 
