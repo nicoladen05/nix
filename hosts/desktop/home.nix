@@ -25,7 +25,7 @@
           primary = true;
           resolution = "3840x2160";
           refreshRate = 240;
-          scale = 2;
+          scale = "2";
           vrr = true;
         }
       ];
