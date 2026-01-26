@@ -63,6 +63,16 @@ in
       ];
     };
 
+    services.restic.backups."hytale-server" = {
+      repositoryFile = config.sops.secrets."restic/repository".path;
+      passwordFile = config.sops.secrets."restic/password".path;
+      timerConfig = {
+        OnCalendar = "04:00";
+      };
+      paths = [ "/data/lib/hytale-server" ];
+      pruneOpts = [ "--keep-daily 2" ];
+    };
+
     # This is the port used by the query plugin
     networking.firewall.allowedUDPPorts = [ 5521 ];
   };
