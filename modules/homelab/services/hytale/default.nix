@@ -32,6 +32,8 @@ in
         "-Xms4G"
       ];
 
+      universe = "/var/lib/hytale-server/universe";
+
       package = pkgs.hytale-server.overrideAttrs (oldAttrs: {
         version = "2026.01.22";
         src = pkgs.requireFile {
