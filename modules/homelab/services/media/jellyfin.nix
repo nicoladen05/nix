@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.homelab.services.media.jellyfin;
@@ -18,6 +23,11 @@ in
       enable = true;
       openFirewall = true;
       group = "users";
+    };
+
+    hardware.graphics = {
+      enable = true;
+      extraPackages = [ pkgs.intel-media-driver ];
     };
 
     services.caddy.virtualHosts = {
