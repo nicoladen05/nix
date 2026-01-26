@@ -69,7 +69,7 @@ in
       timerConfig = {
         OnCalendar = "04:00";
       };
-      paths = [ "/data/lib/hytale-server" ];
+      paths = [ "/var/lib/hytale-server" ];
       pruneOpts = [ "--keep-daily 2" ];
     };
 
