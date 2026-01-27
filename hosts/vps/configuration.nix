@@ -73,7 +73,7 @@ in
           enable = true;
           servers = lib.mapAttrs (
             name: config:
-            builtins.removeAttrs config [
+            removeAttrs config [
               "host"
               "domain"
             ]
@@ -87,7 +87,7 @@ in
         settings.tokenFile = config.sops.templates."glance/vps_remote_env".path;
       };
 
-      minio.enable = false;
+      minio.enable = true;
 
       pyrodactyl.enable = false;
     };
