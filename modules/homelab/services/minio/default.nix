@@ -16,6 +16,11 @@ in
       default = "minio.${config.homelab.baseDomain}";
       description = "URL of the minio service";
     };
+    s3url = lib.mkOption {
+      type = lib.types.str;
+      default = "s3.${config.homelab.baseDomain}";
+      description = "URL of the s3 port";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -31,6 +36,11 @@ in
       "${cfg.url}" = {
         extraConfig = ''
           reverse_proxy 127.0.0.1:9001
+        '';
+      };
+      "${cfg.s3url}" = {
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:9000
         '';
       };
     };
