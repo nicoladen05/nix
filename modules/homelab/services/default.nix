@@ -20,6 +20,7 @@
     ./minio
     ./n8n
     ./ocis
+    ./openwebui
     ./paperless
     ./pihole
     ./prusa-octoapp-proxy

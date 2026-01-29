@@ -96,6 +96,8 @@ in
 
       ocis.enable = true;
 
+      openwebui.enable = true;
+
       wireguard = {
         enable = true;
         externalInterface = "enp1s0";
