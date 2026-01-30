@@ -262,9 +262,29 @@ in
                         icon = "si:owncloud";
                       }
                       {
+                        title = "Audiobookshelf";
+                        url = "https://audiobookshelf.taube.party";
+                        icon = "sh:audiobookshelf";
+                      }
+                      {
                         title = "Paperless-NGX";
-                        url = "http://192.168.2.2:28981";
+                        url = "https://paperless.taube.party";
                         icon = "sh:paperless-ngx";
+                      }
+                      {
+                        title = "Jellyfin";
+                        url = "https://jellyfin.taube.party";
+                        icon = "sh:jellyfin";
+                      }
+                      {
+                        title = "Code-Server";
+                        url = "https://code.taube.party";
+                        icon = "sh:coder";
+                      }
+                      {
+                        title = "OpenWebUI";
+                        url = "https://chat.nicoladen.dev";
+                        icon = "sh:openai";
                       }
                       {
                         title = "Vaultwarden";
@@ -278,17 +298,17 @@ in
                       }
                       {
                         title = "Pihole";
-                        url = "http://192.168.2.2:8081/admin";
+                        url = "https://pihole.taube.party/admin";
                         icon = "sh:pi-hole";
                       }
                       {
                         title = "Spoolman";
-                        url = "http://192.168.2.2:7912";
+                        url = "https://spoolman.taube.party";
                         icon = "sh:spoolman";
                       }
                       {
                         title = "ESPHome";
-                        url = "http://192.168.2.2:6052";
+                        url = "https://esphome.taube.party";
                         icon = "sh:esphome";
                       }
                     ];
