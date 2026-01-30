@@ -22,6 +22,8 @@ in
       "d ${cfg.configDir} 0775 nico users -"
     ];
 
+    services.resolved.settings.Resolve.DNSStubListener = false;
+
     virtualisation.containers.enable = true;
     virtualisation.oci-containers.backend = "podman";
     virtualisation = {
@@ -43,7 +45,7 @@ in
         "${network.clients.server.ip}:8082:443/tcp"
       ];
       volumes = [
-        "${builtins.toString cfg.configDir}:/etc/pihole"
+        "${toString cfg.configDir}:/etc/pihole"
       ];
       environment = {
         TZ = config.system.timeZone;
@@ -57,8 +59,6 @@ in
       53
       8081
       8082
-      8081
-      8082
     ];
 
     services.caddy.virtualHosts = {
@@ -69,6 +69,5 @@ in
         '';
       };
     };
-
   };
 }

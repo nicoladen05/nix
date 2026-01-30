@@ -159,14 +159,10 @@ in
   };
 
   # Static ip
-  services.resolved.enable = false;
   networking = {
-    networkmanager.dns = "none";
-    resolvconf.enable = false;
     nameservers = [
       "1.1.1.1"
     ];
-
     interfaces.enp1s0.ipv4.addresses = [
       {
         address = "192.168.2.2";
@@ -178,8 +174,6 @@ in
       interface = "enp1s0";
     };
   };
-
-  environment.etc."resolv.conf".text = "nameserver 1.1.1.1\noptions edns0";
 
   # Users
   users.users.root.hashedPassword = "$6$FdDJt3LLc3Iu0r14$DKRv42b0IsqkW6OFkWr0WnUoxMPPaFUnSZgBFJKfR4elFeGRU3NfhP1rXbWd.b9073ZucRQrFto130F3eBVjj0";
