@@ -6,6 +6,7 @@
     ./crowdsec.nix
     ./ddns.nix
 
+    ./audiobookshelf
     ./assetto-corsa-server
     ./backup
     ./blocky

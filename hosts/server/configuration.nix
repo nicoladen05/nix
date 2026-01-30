@@ -43,6 +43,8 @@ in
     internalDomain = "taube.party";
 
     services = {
+      audiobookshelf.enable = true;
+
       assetto-corsa-server.enable = false;
 
       backup = {
