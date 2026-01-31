@@ -80,6 +80,8 @@
           fontconfig
         ]
         ++ lib.optionals config.packages.desktop.enable [
+          nur.repos.Ev357.helium
+           
           pcmanfm
           discord
           spotify

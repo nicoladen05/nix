@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 {
@@ -98,6 +99,7 @@
     # Overlays
     nixpkgs.overlays = [
       (import ../../../overlays/default.nix)
+      inputs.nur.overlays.default
     ];
 
     # Bootloader.
