@@ -97,6 +97,7 @@
         ++ lib.optionals config.packages.coding.enable [
           python3
           typst
+          opencode
         ]
         ++ lib.optionals config.packages.productivity.enable [
           obsidian

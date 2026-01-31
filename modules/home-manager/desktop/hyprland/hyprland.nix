@@ -193,10 +193,6 @@ in
           in
           "${display.display}, ${display.resolution}@${toString display.refreshRate}, ${display.offset}, ${display.scale}${vrrStr}${transformStr}"
         ))
-
-        (lib.forEach (lib.filter (display: display.primary) config.home-manager.hyprland.displays) (
-          display: "${display.display}, addreserved, -10, 0, 0, 0"
-        ))
       ];
 
       "$terminal" = "alacritty";

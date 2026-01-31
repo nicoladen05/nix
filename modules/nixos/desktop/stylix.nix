@@ -57,10 +57,10 @@
     #   base0F = "B66467";
     # };
 
-    # stylix.image = pkgs.fetchurl {
-    #   url = "${config.desktop.stylix.wallpaper}";
-    #   sha256 = "${config.desktop.stylix.wallpaperHash}}";
-    # };
+    stylix.image = pkgs.fetchurl {
+      url = "${config.desktop.stylix.wallpaper}";
+      hash = "${config.desktop.stylix.wallpaperHash}";
+    };
 
     # stylix.cursor.package = pkgs.banana-cursor;
     # stylix.cursor.name = "Banana";
@@ -91,9 +91,9 @@
     };
 
     stylix.fonts.sizes = {
-      terminal = 13;
-      desktop = 12;
-      applications = 11;
+      terminal = 11;
+      desktop = 10;
+      applications = 10;
     };
   };
 }
