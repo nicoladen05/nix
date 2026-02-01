@@ -277,16 +277,6 @@ in
                         icon = "sh:jellyfin";
                       }
                       {
-                        title = "Code-Server";
-                        url = "https://code.taube.party";
-                        icon = "sh:coder";
-                      }
-                      {
-                        title = "OpenWebUI";
-                        url = "https://chat.nicoladen.dev";
-                        icon = "sh:openai";
-                      }
-                      {
                         title = "Vaultwarden";
                         url = "https://vaultwarden.nicoladen.dev";
                         icon = "si:vaultwarden";

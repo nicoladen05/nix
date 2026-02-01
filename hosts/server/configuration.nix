@@ -53,8 +53,6 @@ in
         passwordFile = config.sops.secrets."restic/password".path;
       };
 
-      code-server.enable = true;
-
       ddns = {
         enable = true;
         tokenFile = config.sops.secrets."cloudflare/api_token".path;
@@ -97,8 +95,6 @@ in
       prusa-octoapp-proxy.enable = true;
 
       ocis.enable = true;
-
-      openwebui.enable = true;
 
       wireguard = {
         enable = true;
