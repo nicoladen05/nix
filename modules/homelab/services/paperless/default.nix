@@ -27,6 +27,7 @@ in
           "desktop.ini"
         ];
         PAPERLESS_OCR_LANGUAGE = "deu+eng";
+        PAPERLESS_URL = "https://paperless.${config.homelab.internalDomain}";
       };
     };
 
