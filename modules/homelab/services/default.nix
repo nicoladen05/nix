@@ -26,6 +26,7 @@
     ./pihole
     ./prusa-octoapp-proxy
     ./pyrodactyl
+    ./shelfmark
     ./spoolman
     ./vaultwarden
     ./windows

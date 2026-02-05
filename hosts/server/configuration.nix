@@ -62,13 +62,13 @@ in
         ];
       };
 
-      glance.enable = true;
-
       botify = {
         enable = true;
         tokenFile = config.sops.secrets."services/botify/token".path;
         openaiTokenFile = config.sops.secrets."services/botify/openai_api_key".path;
       };
+
+      glance.enable = true;
 
       immich = {
         enable = true;
@@ -76,7 +76,7 @@ in
         mediaLocation = "/data/immich";
       };
 
-      media.jellyfin.enable = true;
+      media.enable = true;
 
       pihole.enable = true;
 
@@ -91,6 +91,8 @@ in
 
       spoolman.enable = true;
       spoolman.filabridge.enable = true;
+
+      shelfmark.enable = true;
 
       prusa-octoapp-proxy.enable = true;
 

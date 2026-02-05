@@ -35,5 +35,32 @@ in
       enable = true;
       openFirewall = true;
     };
+
+    services.caddy.virtualHosts = {
+      "sonarr.${config.homelab.internalDomain}" = {
+        extraConfig = ''
+          import cloudflare_dns
+          reverse_proxy 127.0.0.1:8989
+        '';
+      };
+      "radarr.${config.homelab.internalDomain}" = {
+        extraConfig = ''
+          import cloudflare_dns
+          reverse_proxy 127.0.0.1:7878
+        '';
+      };
+      "prowlarr.${config.homelab.internalDomain}" = {
+        extraConfig = ''
+          import cloudflare_dns
+          reverse_proxy 127.0.0.1:9696
+        '';
+      };
+      "jellyseerr.${config.homelab.internalDomain}" = {
+        extraConfig = ''
+          import cloudflare_dns
+          reverse_proxy 127.0.0.1:5055
+        '';
+      };
+    };
   };
 }

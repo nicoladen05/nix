@@ -262,19 +262,9 @@ in
                         icon = "si:owncloud";
                       }
                       {
-                        title = "Audiobookshelf";
-                        url = "https://audiobookshelf.taube.party";
-                        icon = "sh:audiobookshelf";
-                      }
-                      {
                         title = "Paperless-NGX";
                         url = "https://paperless.taube.party";
                         icon = "sh:paperless-ngx";
-                      }
-                      {
-                        title = "Jellyfin";
-                        url = "https://jellyfin.taube.party";
-                        icon = "sh:jellyfin";
                       }
                       {
                         title = "Vaultwarden";
@@ -300,6 +290,53 @@ in
                         title = "ESPHome";
                         url = "https://esphome.taube.party";
                         icon = "sh:esphome";
+                      }
+                      {
+                        title = "Shelfmark";
+                        url = "https://shelfmark.taube.party";
+                        icon = "sh:shelfmark";
+                      }
+                    ];
+                  }
+                  {
+                    type = "monitor";
+                    cache = "1m";
+                    title = "Media";
+                    sites = [
+                      {
+                        title = "Jellyfin";
+                        url = "https://jellyfin.taube.party";
+                        icon = "sh:jellyfin";
+                      }
+                      {
+                        title = "Audiobookshelf";
+                        url = "https://audiobookshelf.taube.party";
+                        icon = "sh:audiobookshelf";
+                      }
+                      {
+                        title = "Sonarr";
+                        url = "https://sonarr.taube.party";
+                        icon = "sh:sonarr";
+                      }
+                      {
+                        title = "Radarr";
+                        url = "https://radarr.taube.party";
+                        icon = "sh:radarr";
+                      }
+                      {
+                        title = "Prowlarr";
+                        url = "https://prowlarr.taube.party";
+                        icon = "sh:prowlarr";
+                      }
+                      {
+                        title = "Jellyseerr";
+                        url = "https://jellyseerr.taube.party";
+                        icon = "sh:jellyseerr";
+                      }
+                      {
+                        title = "Sabnzbd";
+                        url = "https://sabnzbd.taube.party";
+                        icon = "sh:sabnzbd";
                       }
                     ];
                   }
