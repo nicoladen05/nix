@@ -22,10 +22,11 @@
   # NVF
   nvf.enable = true;
 
-  programs.nvf.settings.vim.theme = {
-    enable = true;
-    name = "catppuccin";
-    style = "mocha";
+  programs.nvf.settings.vim = {
+    theme.enable = false;
+    luaConfigRC."ayu-theme" = ''
+      vim.cmd.colorscheme("ayu")
+    '';
   };
 
   home.sessionVariables = {
