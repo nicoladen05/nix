@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   config = lib.mkIf config.nvf.enable {
     programs.nvf.settings.vim = {
@@ -76,6 +81,7 @@
       # ui.noice.enable = true;
       ui.colorizer.enable = true;
       ui.colorizer.setupOpts.user_default_options.tailwind = true;
+      utility.oil-nvim.enable = true;
 
       treesitter.autotagHtml = true;
 
