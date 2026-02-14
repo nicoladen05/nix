@@ -32,9 +32,26 @@
 
     programs.git = {
       enable = true;
-      settings.user = {
-        name = "${config.git.userName}";
-        email = "${config.git.userEmail}";
+      settings = {
+        user = {
+          name = "${config.git.userName}";
+          email = "${config.git.userEmail}";
+        };
+
+        init.defaultBranch = "main";
+        pull.rebase = true;
+
+        alias = {
+          lg = "log --graph --oneline --decorate --all";
+          lga = "log --graph --pretty=format:'%C(auto)%h%d %s %C(black)%C(bold)%cr'";
+          c = "commit -m";
+          a = "add -A";
+          st = "status -sb";
+          ca = "commit --amend --no-edit";
+          rbi = "rebase --interactive";
+          rba = "rebase --abort";
+          rbc = "rebase --continue";
+        };
       };
     };
 
