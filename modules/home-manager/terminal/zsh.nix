@@ -53,6 +53,35 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
+        add_newline = false;
+        format = "$directory$git_branch$git_status$nix_shell$hostname$character";
+
+        directory = {
+          fish_style_pwd_dir_length = 1;
+          truncation_length = 0;
+          read_only = " 󰌾";
+        };
+
+        git_branch = {
+          symbol = " ";
+          format = "[$symbol$branch]($style) ";
+        };
+
+        git_status = {
+          format = "([$all_status$ahead_behind]($style) )";
+        };
+
+        nix_shell = {
+          symbol = " ";
+          format = "[$symbol]($style) ";
+        };
+
+        hostname = {
+          ssh_only = true;
+          ssh_symbol = " ";
+          format = "[$ssh_symbol$hostname]($style) ";
+        };
+
         aws.symbol = "  ";
         buf.symbol = " ";
         bun.symbol = " ";
@@ -63,21 +92,18 @@
         crystal.symbol = " ";
         dart.symbol = " ";
         deno.symbol = " ";
-        directory.read_only = " 󰌾";
         docker_context.symbol = " ";
         elixir.symbol = " ";
         elm.symbol = " ";
         fennel.symbol = " ";
         fossil_branch.symbol = " ";
         gcloud.symbol = "  ";
-        git_branch.symbol = " ";
         git_commit.tag_symbol = "  ";
         golang.symbol = " ";
         guix_shell.symbol = " ";
         haskell.symbol = " ";
         haxe.symbol = " ";
         hg_branch.symbol = " ";
-        hostname.ssh_symbol = " ";
         java.symbol = " ";
         julia.symbol = " ";
         kotlin.symbol = " ";
@@ -85,7 +111,6 @@
         memory_usage.symbol = "󰍛 ";
         meson.symbol = "󰔷 ";
         nim.symbol = "󰆥 ";
-        nix_shell.symbol = " ";
         nodejs.symbol = " ";
         ocaml.symbol = " ";
         package.symbol = "󰏗 ";
