@@ -31,12 +31,10 @@
         lg = "lazygit";
         y = "yazi";
         sp = "spotify_player";
+        oc = "opencode";
 
-        shell = "nix-shell --command zsh -p";
+        "nix shell" = "nix shell -c zsh";
         "nix develop" = "nix develop -c zsh";
-
-        rb = "sudo nixos-rebuild switch --flake ~/.config/nixos/#default";
-        rt = "sudo nixos-rebuild test --flake ~/.config/nixos/#default";
       };
 
       initContent = ''
