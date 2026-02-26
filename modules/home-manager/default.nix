@@ -36,7 +36,11 @@
         user = {
           name = "${config.git.userName}";
           email = "${config.git.userEmail}";
+          signingkey = "~/.ssh/id_rsa.pub";
         };
+
+        gpg.format = "ssh";
+        commit.gpgsign = true;
 
         init.defaultBranch = "main";
         pull.rebase = true;
