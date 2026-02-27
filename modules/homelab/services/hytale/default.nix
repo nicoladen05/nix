@@ -35,10 +35,10 @@ in
       universe = "/var/lib/hytale-server/universe";
 
       package = pkgs.hytale-server.overrideAttrs (oldAttrs: {
-        version = "2026.01.22";
+        version = "2026.02.19";
         src = pkgs.requireFile {
           name = "HytaleServer.jar";
-          hash = "sha256-OEftAQOkJIG+4xzs6M+A4QN6gKge4+vqxf2gKbgiwGE=";
+          hash = "sha256-TcOAVWGKpER/vcvbzkWPfu+xhQco6PxNp6ZF8C/49G4=";
           message = ''
             The Hytale server cannot be downloaded automatically.
             Please download it manually:
