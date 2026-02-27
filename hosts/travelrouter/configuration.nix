@@ -46,13 +46,8 @@ in
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDd8/E/gDl/V+xvQG1yR9TxzHp0MDpGLnSLarb0Vhfp6i2ucX6IrpGWZ6pXyYHPxQzXcIUuDbufoEAFjAc5n8qZ98dbL1TjshnXPU3agQyeJ1zumAcktObqsjLkQV4cG/1OA3v6bDN6s7LX1yfAb156wDQHTj3bVFPdq79gdP2GasMqbm/NOZ9RR01fSSkEa8PqP+2vUkkCNBarQTv3ssMwgbl85wSiHfFYUuXsUXbHDIi1CHRbc4QogBRK5VoGPAk/tOtJ80wLQj2T3o6AEHnKcZOPGJJE4Uy++azyiCFjoy8dU6NMNkIz2yqxXydDefWn81WCLlkOC2ou24t7ZbfcTv63TSl1FLMdV1ME3xqgLDrsE6T6C4eNxVuIEfF3Ff2SVMXErEJGRiJDkHrKED+N1dXNDME7Nft4pAViSWRDURJXZ948YUZWZ9UuxqOg4HzIhdRNnbtjyJeplQMBUDIB73Ux6np254XP1zrxq7ebNVH4Ljo9KzWUNXxSW5iaw0yI/HPTjE4IaVjJwQPBjb+tLpbLxdtQ832QGc74Q7f4vOFVsnLQe18P9nWv5KlyeKh0TowVo04xjQituo/qHijFQ0tmkSBgERqHohbn7/18FTe0tPpY316+FMRlFMHY4x4/KW9D/LeOQtpeXAiixp8QTkAOtX1LhyCV4q6/Q0kYlQ== nico@cachy"
   ];
 
-  system.nixos.tags =
-    let
-      cfg = config.boot.loader.raspberryPi;
-    in
-    [
-      "raspberry-pi-${cfg.variant}"
-      cfg.bootloader
-      config.boot.kernelPackages.kernel.version
-    ];
+  system.nixos.tags = [
+    "raspberry-pi-5"
+    config.boot.kernelPackages.kernel.version
+  ];
 }
