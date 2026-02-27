@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.homelab.services.n8n;
@@ -16,7 +21,10 @@ in
   config = lib.mkIf cfg.enable {
     services.n8n = {
       enable = true;
-      environment.WEBHOOK_URL = "https://${cfg.url}";
+      environment = {
+        WEBHOOK_URL = "https://${cfg.url}";
+        N8N_RUNNERS_AUTH_TOKEN_FILE = pkgs.writeText "n8n-empty-runner-token" "";
+      };
     };
 
     services.caddy.virtualHosts = {
