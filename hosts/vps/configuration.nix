@@ -126,6 +126,7 @@ in
   packages = {
     enable = true;
     terminal.enable = true;
+    coding.enable = true;
   };
 
   boot.kernelParams = [ "net.ifnames=0" ];
