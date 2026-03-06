@@ -60,14 +60,6 @@
         };
       };
 
-      # TODO: Make copilot not autocomplete in parenteses
-      assistant = {
-        copilot = {
-          enable = true;
-          cmp.enable = true;
-        };
-      };
-
       telescope.enable = true;
       autopairs.nvim-autopairs.enable = true;
       dashboard.alpha.enable = true;
@@ -81,7 +73,13 @@
       # ui.noice.enable = true;
       ui.colorizer.enable = true;
       ui.colorizer.setupOpts.user_default_options.tailwind = true;
-      utility.oil-nvim.enable = true;
+
+      utility.oil-nvim = {
+        enable = true;
+        setupOpts = {
+          skip_confirm_for_simple_edits = true;
+        };
+      };
 
       treesitter.autotagHtml = true;
 
