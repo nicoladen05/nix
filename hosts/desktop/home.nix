@@ -10,6 +10,7 @@
 
   home-manager = {
     enable = true;
+    niri.enable = true;
 
     firefox.enable = false;
     terminal.enable = true;

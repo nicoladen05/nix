@@ -4,5 +4,6 @@
   imports = [
     ./hyprland
     ./gnome
+    ./niri
   ];
 }
