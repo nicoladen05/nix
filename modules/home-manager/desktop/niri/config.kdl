@@ -9,6 +9,14 @@
 
 prefer-no-csd
 
+cursor {
+    xcursor-theme "Posy_Cursor_Black"
+    xcursor-size 30
+
+    hide-when-typing
+    hide-after-inactive-ms 3000
+}
+
 input {
     keyboard {
 
