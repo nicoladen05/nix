@@ -7,6 +7,7 @@
     ./system
     ./nvf
     ./programs
+    ./scripts
 
     ./packages.nix
   ];
