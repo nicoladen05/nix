@@ -21,12 +21,24 @@
       xwayland-satellite
       wl-clipboard
       swaybg
-      fuzzel
       playerctl
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
     home.file.".config/niri/wallpaper.jpg".source = ./wallpaper.jpg;
+
+    programs.fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+          font = lib.mkForce "monospace:size=12";
+        };
+        border = {
+          width = 2;
+          radius = 0;
+        };
+      };
+    };
 
     services.swayidle = {
       enable = true;
