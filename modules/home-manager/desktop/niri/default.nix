@@ -5,6 +5,30 @@
   ...
 }:
 
+let
+  niriPowerMenu = pkgs.writeShellScriptBin "niri-power-menu" ''
+    #!/usr/bin/env bash
+
+    set -euo pipefail
+
+    selected="$(printf '%s\n' 'Sleep' 'Logout' 'Shutdown' 'Restart' | fuzzel --dmenu --prompt 'Power: ')"
+
+    case "$selected" in
+      Sleep)
+        systemctl suspend
+        ;;
+      Logout)
+        niri msg action quit
+        ;;
+      Shutdown)
+        systemctl poweroff
+        ;;
+      Restart)
+        systemctl reboot
+        ;;
+    esac
+  '';
+in
 {
   imports = [
     ./brightness.nix
@@ -22,6 +46,7 @@
       wl-clipboard
       swaybg
       playerctl
+      niriPowerMenu
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
