@@ -419,13 +419,13 @@ in
         "$secondaryMod, mouse:273, resizewindow"
       ];
 
-      windowrulev2 = [
-        "suppressevent maximize, class:.*"
-        "noanim,class:^(ueberzugpp.*)"
-        "float,class:^(ueberzugpp.*)"
-        "workspace 8, class:spotify"
-        "workspace 9, class:discord"
-      ];
+      # windowrulev2 = [
+      #   "suppressevent maximize, class:.*"
+      #   "noanim,class:^(ueberzugpp.*)"
+      #   "float,class:^(ueberzugpp.*)"
+      #   "workspace 8, class:spotify"
+      #   "workspace 9, class:discord"
+      # ];
 
       workspace = [
         "1, monitor:${primaryMonitor}"
