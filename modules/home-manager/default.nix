@@ -10,6 +10,7 @@
     ./terminal
     ./desktop
     ./firefox.nix
+    ./zed.nix
   ];
 
   options = {

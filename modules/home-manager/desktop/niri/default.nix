@@ -22,7 +22,6 @@
       wl-clipboard
       swaybg
       fuzzel
-      mako
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
