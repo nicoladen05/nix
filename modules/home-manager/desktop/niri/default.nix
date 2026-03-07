@@ -22,6 +22,7 @@
       wl-clipboard
       swaybg
       fuzzel
+      playerctl
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
