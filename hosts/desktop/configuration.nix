@@ -70,6 +70,9 @@ in
   # Automount disks
   services.udisks2.enable = true;
 
+  # Enable I2C userspace access for ddcutil
+  hardware.i2c.enable = true;
+
   # Package sets
   packages = {
     enable = true;
@@ -97,6 +100,7 @@ in
   # Users
   users.users.nico.hashedPassword = "$6$FdDJt3LLc3Iu0r14$DKRv42b0IsqkW6OFkWr0WnUoxMPPaFUnSZgBFJKfR4elFeGRU3NfhP1rXbWd.b9073ZucRQrFto130F3eBVjj0";
   users.users.nico.hashedPasswordFile = lib.mkForce null;
+  users.users.nico.extraGroups = [ "i2c" ];
   users.users.root.hashedPassword = "$6$FdDJt3LLc3Iu0r14$DKRv42b0IsqkW6OFkWr0WnUoxMPPaFUnSZgBFJKfR4elFeGRU3NfhP1rXbWd.b9073ZucRQrFto130F3eBVjj0";
   users.users.root.hashedPasswordFile = lib.mkForce null;
 

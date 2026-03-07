@@ -6,6 +6,10 @@
 }:
 
 {
+  imports = [
+    ./brightness.nix
+  ];
+
   options = {
     home-manager.niri.enable = lib.mkEnableOption "enable niri";
   };
