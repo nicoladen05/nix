@@ -10,7 +10,14 @@
 
   home-manager = {
     enable = true;
-    niri.enable = true;
+    niri = {
+      enable = true;
+      wlsunset = {
+        enable = true;
+        latitude = 52.42;
+        longitude = 10.78;
+      };
+    };
 
     firefox.enable = false;
     terminal.enable = true;

@@ -8,6 +8,7 @@
 {
   imports = [
     ./brightness.nix
+    ./wlsunset.nix
   ];
 
   options = {
