@@ -36,7 +36,7 @@
         user = {
           name = "${config.git.userName}";
           email = "${config.git.userEmail}";
-          signingkey = "~/.ssh/id_rsa.pub";
+          signingkey = "~/.ssh/id_ed25519.pub";
         };
 
         gpg.format = "ssh";
