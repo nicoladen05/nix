@@ -7,6 +7,7 @@
     ./ghostty.nix
     ./neomutt.nix
     ./nerdfonts.nix
+    ./opencode.nix
     ./tmux.nix
     ./zsh.nix
   ];

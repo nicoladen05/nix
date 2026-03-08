@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -81,7 +80,7 @@
         ]
         ++ lib.optionals config.packages.desktop.enable [
           nur.repos.Ev357.helium
-           
+
           pcmanfm
           discord
           spotify
@@ -99,7 +98,6 @@
         ++ lib.optionals config.packages.coding.enable [
           python3
           typst
-          opencode
         ]
         ++ lib.optionals config.packages.productivity.enable [
           obsidian
