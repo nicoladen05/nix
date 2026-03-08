@@ -9,6 +9,7 @@
   imports = [
     ./nh.nix
     ./nvidia.nix
+    ./openvpn.nix
     ./sops.nix
   ];
 

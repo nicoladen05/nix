@@ -46,6 +46,7 @@ in
     # Essentials
     enable = true;
     nvidia.enable = true;
+    openvpn.enable = true;
     sops.enable = true;
 
     # User account
