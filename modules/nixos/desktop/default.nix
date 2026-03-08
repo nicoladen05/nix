@@ -1,13 +1,11 @@
+{ ... }:
 {
-  lib,
-  config,
-  ...
-}: {
   imports = [
+    ./audio.nix
     ./gnome.nix
     ./hyprland.nix
-    ./stylix.nix
-    ./audio.nix
     ./kde.nix
+    ./niri.nix
+    ./stylix.nix
   ];
 }

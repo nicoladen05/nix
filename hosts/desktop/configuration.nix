@@ -68,9 +68,6 @@ in
     udpPorts = [ ];
   };
 
-  # Automount disks
-  services.udisks2.enable = true;
-
   # Enable I2C userspace access for ddcutil
   hardware.i2c.enable = true;
 
@@ -87,7 +84,7 @@ in
   # Graphical configuration
   desktop = {
     audio.enable = true;
-    hyprland.enable = true;
+    niri.enable = true;
 
     # Colors
     stylix = {

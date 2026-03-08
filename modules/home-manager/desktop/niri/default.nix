@@ -20,12 +20,10 @@ in
 
   config = lib.mkIf config.home-manager.niri.enable {
     home.packages = with pkgs; [
-      niri
       xwayland-satellite
       wl-clipboard
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
-      gnome-keyring
       swaybg
       playerctl
       menus.niriPowerMenu

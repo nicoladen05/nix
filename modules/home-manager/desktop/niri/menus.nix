@@ -30,7 +30,12 @@
     set -euo pipefail
 
     nmcli_bin="${pkgs.networkmanager}/bin/nmcli"
+    nmtui_bin="${pkgs.networkmanager}/bin/nmtui"
+    date_bin="${pkgs.coreutils}/bin/date"
     notify_bin="${pkgs.libnotify}/bin/notify-send"
+    pavucontrol_bin="${pkgs.pavucontrol}/bin/pavucontrol"
+    terminal_bin="${pkgs.alacritty}/bin/alacritty"
+    wpctl_bin="${pkgs.wireplumber}/bin/wpctl"
     state_dir="''${XDG_STATE_HOME:-$HOME/.local/state}"
     last_profile_file="$state_dir/niri-openvpn-last"
 
@@ -48,6 +53,78 @@
     prompt_password() {
       local prompt="$1"
       fuzzel --dmenu --password --prompt-only "$prompt" || true
+    }
+
+    get_volume_status() {
+      local volume_raw
+      local level
+      local level_percent
+
+      volume_raw="$($wpctl_bin get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null || true)"
+      if [[ -z "$volume_raw" ]]; then
+        printf '%s\n' "Unknown"
+        return
+      fi
+
+      if [[ "$volume_raw" =~ ([0-9]*\.?[0-9]+) ]]; then
+        level="''${BASH_REMATCH[1]}"
+        if [[ "$level" == *.* ]]; then
+          level_percent="''${level#*.}"
+          level_percent="''${level_percent}00"
+          level_percent="''${level_percent:0:2}"
+          level="$((10#''${level%.*} * 100 + 10#$level_percent))"
+        else
+          level="$((10#''${level} * 100))"
+        fi
+
+        if [[ "$volume_raw" == *"[MUTED]"* ]]; then
+          printf '%s\n' "$level%% (muted)"
+        else
+          printf '%s\n' "$level%%"
+        fi
+        return
+      fi
+
+      printf '%s\n' "$volume_raw"
+    }
+
+    get_network_status() {
+      local network
+      local wifi_name
+      local name
+      local conn_type
+
+      network="Disconnected"
+      wifi_name=""
+
+      while IFS=: read -r name conn_type; do
+        [[ -z "$name" ]] && continue
+        [[ "$conn_type" == "vpn" ]] && continue
+
+        if [[ "$conn_type" == "802-3-ethernet" || "$conn_type" == "ethernet" ]]; then
+          printf '%s\n' "Wired"
+          return
+        fi
+
+        if [[ "$conn_type" == "802-11-wireless" || "$conn_type" == "wifi" ]]; then
+          wifi_name="$name"
+        fi
+      done < <($nmcli_bin -t -f NAME,TYPE connection show --active 2>/dev/null || true)
+
+      if [[ -n "$wifi_name" ]]; then
+        network="$wifi_name"
+      fi
+
+      printf '%s\n' "$network"
+    }
+
+    get_vpn_status() {
+      local active_uuid
+      if active_uuid="$(active_openvpn_uuid)"; then
+        connection_name "$active_uuid"
+      else
+        printf '%s\n' "Off"
+      fi
     }
 
     is_openvpn_uuid() {
@@ -240,15 +317,61 @@
       esac
     }
 
-    selected="$(menu "Actions: " "OpenVPN" "Power")"
+    show_actions_menu() {
+      local now
+      local volume
+      local network
+      local vpn
+      local volume_icon
+      local network_icon
+      local time_item
+      local volume_item
+      local network_item
+      local vpn_item
+      local power_item
+      local selected
 
-    case "$selected" in
-      OpenVPN)
-        openvpn_menu
-        ;;
-      Power)
-        niri-power-menu
-        ;;
-    esac
+      now="$($date_bin '+%H:%M %d.%m. %a')"
+      volume="$(get_volume_status)"
+      network="$(get_network_status)"
+      vpn="$(get_vpn_status)"
+
+      volume_icon=""
+      if [[ "$volume" == *"(muted)"* ]]; then
+        volume_icon="󰝟"
+      fi
+
+      network_icon="󰤭"
+      if [[ "$network" == "Wired" ]]; then
+        network_icon="󰈀"
+      elif [[ "$network" != "Disconnected" ]]; then
+        network_icon="󰤨"
+      fi
+
+      time_item="  $now"
+      volume_item="$volume_icon  $volume"
+      network_item="$network_icon  $network"
+      vpn_item="󰌾  VPN: $vpn"
+      power_item="  Power"
+
+      selected="$(menu "Actions: " "$time_item" "$volume_item" "$network_item" "$vpn_item" "$power_item")"
+
+      case "$selected" in
+        "$volume_item")
+          "$pavucontrol_bin" &
+          ;;
+        "$network_item")
+          "$terminal_bin" -e "$nmtui_bin" &
+          ;;
+        "$vpn_item")
+          openvpn_menu
+          ;;
+        "$power_item")
+          niri-power-menu
+          ;;
+      esac
+    }
+
+    show_actions_menu
   '';
 }
