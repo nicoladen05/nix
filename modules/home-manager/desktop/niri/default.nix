@@ -44,6 +44,9 @@ in
       niri
       xwayland-satellite
       wl-clipboard
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+      gnome-keyring
       swaybg
       playerctl
       niriPowerMenu
