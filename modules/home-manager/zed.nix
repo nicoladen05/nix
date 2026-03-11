@@ -1,6 +1,7 @@
 {
   lib,
   config,
+pkgs,
   ...
 }:
 
@@ -12,6 +13,13 @@
   config = lib.mkIf config.home-manager.zed.enable {
     programs.zed-editor = {
       enable = true;
+
+      extraPackages = [
+        pkgs.jdt-language-server
+
+        pkgs.nil
+        pkgs.nixd
+      ];
 
       mutableUserSettings = false;
       mutableUserKeymaps = false;
