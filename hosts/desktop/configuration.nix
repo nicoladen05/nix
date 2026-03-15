@@ -47,7 +47,6 @@ in
     # Essentials
     enable = true;
     nvidia.enable = true;
-    openvpn.enable = true;
     sops.enable = true;
 
     # User account
@@ -63,6 +62,11 @@ in
 
     # Extra settings
     bluetooth.enable = true;
+
+    openvpn = {
+      enable = true;
+      persistence.enable = true;
+    };
 
     # Firewall
     tcpPorts = [ 22 ];
