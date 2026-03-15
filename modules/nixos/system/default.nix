@@ -139,6 +139,7 @@
       ];
       shell = config.system.shell;
       hashedPasswordFile = lib.mkIf config.system.password.enable "${config.system.password.hashedPasswordFile}";
+      openssh.authorizedKeys.keys = import ../../../configs/ssh/authorized-keys.nix;
     };
 
     users.users.root = {
