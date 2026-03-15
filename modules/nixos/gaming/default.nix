@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./assetto-corsa
     ./steam.nix
     ./controller.nix
   ];

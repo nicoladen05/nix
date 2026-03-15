@@ -104,8 +104,12 @@ in
   users.users.root.hashedPasswordFile = lib.mkForce null;
 
   # Gaming
-  gaming.enable = true;
-  gaming.controller.xbox.enable = true;
+  gaming = {
+    enable = true;
+    controller.xbox.enable = true;
+
+    assetto-corsa.enable = true;
+  };
 
   nvf.enable = true;
 
