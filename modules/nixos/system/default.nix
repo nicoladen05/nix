@@ -207,7 +207,8 @@
       enable = true;
       flake = "github:nicoladen05/nix#${config.system.hostName}";
       dates = "4:00";
-      flags = [ "-L "];
+      flags = [ "-L --refresh"];
+      upgrade = false;
       allowReboot = true;
     };
   };
