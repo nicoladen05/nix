@@ -203,6 +203,16 @@
               mode = "n";
               action = "<cmd>Neotree toggle<cr>";
             }
+            {
+              key = "<leader>tp";
+              mode = "n";
+              action = "<cmd>TypstPreview<cr>";
+            }
+            {
+              key = "<leader>tP";
+              mode = "n";
+              action = "<cmd>TypstPreviewToggle<cr>";
+            }
           ];
         };
       };

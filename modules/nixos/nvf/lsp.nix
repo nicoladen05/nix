@@ -83,6 +83,12 @@
           lsp.enable = true;
         };
 
+        typst = {
+          enable = true;
+          format.enable = true;
+          extensions.typst-preview-nvim.enable = true;
+        };
+
         markdown.enable = true;
         rust.enable = true;
         # markdown.extensions.render-markdown-nvim.enable = true;
