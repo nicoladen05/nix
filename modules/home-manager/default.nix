@@ -40,6 +40,8 @@
           signingkey = "~/.ssh/id_ed25519.pub";
         };
 
+        credential.helper = "store";
+
         gpg.format = "ssh";
         commit.gpgsign = true;
 
