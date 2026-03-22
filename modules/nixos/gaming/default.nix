@@ -8,6 +8,7 @@
     ./assetto-corsa
     ./steam.nix
     ./controller.nix
+    ./jovian
   ];
 
   options = {

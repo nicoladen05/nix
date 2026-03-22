@@ -62,6 +62,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hytale-server-nix = {
       url = "github:nicoladen05/hytale-server-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
