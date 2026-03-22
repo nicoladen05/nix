@@ -30,6 +30,11 @@ in
           useSteamOSConfig = true;
           enableBluetoothConfig = config.system.bluetooth.enable;
         };
+
+        decky-loader = {
+          enable = true;
+          user = config.system.userName;
+        };
       };
     };
   };
