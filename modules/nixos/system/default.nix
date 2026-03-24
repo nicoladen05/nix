@@ -88,8 +88,14 @@
       };
 
       ssh = {
-        enable = lib.mkOption { type = lib.types.bool; default = false; };
-        allowEmptyPasswords = lib.mkOption { type = lib.types.bool; default = false; };
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        allowEmptyPasswords = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       };
     };
   };
@@ -138,12 +144,14 @@
         "wheel"
       ];
       shell = config.system.shell;
-      hashedPasswordFile = lib.mkIf config.system.password.enable "${config.system.password.hashedPasswordFile}";
+      hashedPasswordFile = lib.mkIf config.system.password.enable "${config.system.password.hashedPasswordFile
+      }";
       openssh.authorizedKeys.keys = import ../../../configs/ssh/authorized-keys.nix;
     };
 
     users.users.root = {
-      hashedPasswordFile = lib.mkIf config.system.password.enable "${config.system.password.hashedPasswordFile}";
+      hashedPasswordFile = lib.mkIf config.system.password.enable "${config.system.password.hashedPasswordFile
+      }";
     };
 
     # Rebuild without password
@@ -151,16 +159,33 @@
       {
         users = [ "${config.system.userName}" ];
         commands = [
-          { command = "/run/current-system/sw/bin/nix"; options = [ "NOPASSWD" ]; }
-          { command = "/run/current-system/sw/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
-          { command = "/nix/var/nix/profiles/system/bin/switch-to-configuration"; options = [ "NOPASSWD" ]; }
-          { command = "/run/current-system/sw/bin/systemctl"; options = [ "NOPASSWD" ]; }
-          { command = "/run/current-system/sw/bin/nix-env"; options = [ "NOPASSWD" ]; }
-          { command = "/run/current-system/sw/bin/nix-store"; options = [ "NOPASSWD" ]; }
+          {
+            command = "/run/current-system/sw/bin/nix";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/nixos-rebuild";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/nix/var/nix/profiles/system/bin/switch-to-configuration";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/systemctl";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/nix-env";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/nix-store";
+            options = [ "NOPASSWD" ];
+          }
         ];
       }
     ];
-
 
     # Bluetooth
     hardware.bluetooth = lib.mkIf config.system.bluetooth.enable {
@@ -168,9 +193,6 @@
       powerOnBoot = true;
       settings.General = {
         experimental = true;
-        Privacy = "device";
-        JustWorksRepairing = "always";
-        Class = "0x000100";
         FastConnectable = true;
       };
     };
@@ -207,7 +229,7 @@
       enable = true;
       flake = "github:nicoladen05/nix#${config.system.hostName}";
       dates = "4:00";
-      flags = [ "-L --refresh"];
+      flags = [ "-L --refresh" ];
       upgrade = false;
       allowReboot = true;
     };

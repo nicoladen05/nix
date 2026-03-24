@@ -9,7 +9,6 @@
     programs.steam = {
       enable = true;
       package = pkgs.steam;
-      gamescopeSession.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
