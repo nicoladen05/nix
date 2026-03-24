@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 
 let
   cfg = config.homelab.services.spoolman;
@@ -18,6 +18,23 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    nixpkgs.overlays = [
+      (final: prev:
+        let
+          python = prev.python312;
+        in
+        {
+          spoolman = prev.spoolman.overridePythonAttrs (old: {
+            nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ python.pkgs.pythonRelaxDepsHook ];
+
+            pythonRelaxDeps = (old.pythonRelaxDeps or [ ]) ++ [
+              "hishel"
+              "websockets"
+            ];
+          });
+        })
+    ];
+
     services.spoolman = {
       enable = true;
       listen = "0.0.0.0";
