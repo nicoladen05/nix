@@ -1,7 +1,7 @@
 {
   lib,
   config,
-pkgs,
+  pkgs,
   ...
 }:
 
@@ -57,7 +57,6 @@ pkgs,
         project_panel = {
           file_icons = true;
           entry_spacing = "comfortable";
-          dock = "right";
         };
         icon_theme = "Material Icon Theme";
         vim_mode = true;
