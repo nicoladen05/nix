@@ -22,10 +22,36 @@ in
       (final: prev:
         let
           python = prev.python312;
+          hishel = python.pkgs.buildPythonPackage rec {
+            pname = "hishel";
+            version = "0.1.2";
+            pyproject = true;
+
+            src = prev.fetchPypi {
+              inherit pname version;
+              hash = "sha256-ZkNFC/sc+i7NYAJ2n29QadDQSMnB8eKamKSDAtWHUJI=";
+            };
+
+            build-system = with python.pkgs; [ hatch-fancy-pypi-readme hatchling ];
+
+            dependencies = with python.pkgs; [
+              anyio
+              httpcore
+              httpx
+              msgpack
+            ];
+
+            pythonImportsCheck = [ "hishel" ];
+          };
         in
         {
           spoolman = prev.spoolman.overridePythonAttrs (old: {
             nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ python.pkgs.pythonRelaxDepsHook ];
+
+            propagatedBuildInputs = builtins.map (
+              dep:
+              if lib.hasAttrByPath [ "pname" ] dep && dep.pname == "hishel" then hishel else dep
+            ) (old.propagatedBuildInputs or [ ]);
 
             pythonRelaxDeps = (old.pythonRelaxDeps or [ ]) ++ [
               "hishel"
