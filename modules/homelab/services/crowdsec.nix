@@ -69,26 +69,7 @@ in
           ];
         };
       };
-
-
-      crowdsec-firewall-bouncer = {
-        enable = true;
-        registerBouncer.enable = true;
-        settings = {
-          iptables_chains = [ "INPUT" "DOCKER-USER" ];
-        };
-      };
     };
 
-    systemd.services.crowdsec-firewall-bouncer = {
-      path = [ pkgs.ipset pkgs.iptables ];
-      serviceConfig = {
-        CapabilityBoundingSet = [ "CAP_NET_ADMIN" "CAP_NET_RAW" ];
-        AmbientCapabilities = [ "CAP_NET_ADMIN" "CAP_NET_RAW" ];
-      };
-    };
-
-    environment.systemPackages = [ pkgs.ipset ];
-    boot.kernelModules = [ "ipset" ];
   };
 }
