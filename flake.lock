@@ -931,6 +931,26 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774422996,
+        "narHash": "sha256-mWjBJIbiMPCpljAQDk8RYf+92/lYZ5npHe2r2SJ+QWc=",
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "rev": "08058326f04e9b5e55c903b3702405a8d3556ac6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "botify": "botify",
@@ -949,6 +969,7 @@
         "nur": "nur",
         "nvf": "nvf",
         "prusa-octoapp-proxy": "prusa-octoapp-proxy",
+        "quickshell": "quickshell",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "vicinae": "vicinae"
