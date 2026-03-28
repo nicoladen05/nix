@@ -23,7 +23,10 @@ input {
         repeat-rate 35
         repeat-delay 250
 
-        xkb { }
+        xkb {
+            layout "us"
+            options "compose:caps"
+        }
 
         numlock
     }
