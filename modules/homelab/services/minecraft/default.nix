@@ -33,6 +33,7 @@
                   "vanilla"
                   "fabric"
                   "forge"
+                  "neoforge"
                   "quilt"
                   "paper"
                 ];
@@ -43,6 +44,7 @@
                   - `vanilla`: The official Minecraft server.
                   - `fabric`: A lightweight modding toolchain.
                   - `forge`: A popular modding platform.
+                  - `neoforge`: A modern fork of Forge.
                   - `quilt`: A modern modding platform that is a continuation of Fabric.
                   - `paper`: A high-performance fork of Spigot.
                 '';

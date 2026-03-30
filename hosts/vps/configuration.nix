@@ -62,7 +62,7 @@ in
         ];
       };
 
-      hytale-server.enable = true;
+      hytale-server.enable = false;
 
       minecraft-server =
         let
