@@ -5,25 +5,21 @@ let
 in
 {
   default = {
-    fabric-api = fetchurl {
-      url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/yGAe1owa/fabric-api-0.116.9%2B1.21.1.jar";
-      sha512 = "e643876079b950aef9aad3eee8d27046305895e8d0f595f7f95010839adeaa25c55a6dc8624ccfba1201194d6598fcbc11f23a7a553ccefbb8c0ceacf388bb79";
-    };
     ferrite-core = fetchurl {
-      url = "https://cdn.modrinth.com/data/uXXizFIs/versions/sOzRw3CG/ferritecore-7.0.3-fabric.jar";
-      sha512 = "3ad31620fac4ff44327dc7dedbe162b2d978f3f246dc16255a6e400ce9592a0d326fe36a626f3c1bf30a11f813093cbb4dcc107af039cff724d0cdf648541fdf";
+      url = "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar";
+      sha512 = "19af89a2075bb10a63884fa853ebf84b02c79dc3242430ecdad056fd764fdcde367a7303276b329df01b0736e2ef264c5d80c7dc92c6aebd244f556a230bb417";
     };
     lithium = fetchurl {
-      url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/XQJtuOTA/lithium-fabric-0.15.3%2Bmc1.21.1.jar";
-      sha512 = "8c576d519121b0c2521101d2209eccd85d560b097fcb847aa54c51cd0d3f3947676f01c8d99913f514487c8e0972a1cf5f3da0c9ef0ec9bacdf2baeb4eb7d1a7";
+      url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/RXHf27Wv/lithium-neoforge-0.15.3%2Bmc1.21.1.jar";
+      sha512 = "65568e6c7e41684ad20e58db8766813840c0c8406eed9edc3f7a2514da7250ac46bde2bfb0936984cc5516c2782f86387ad0ed3d1b804b8bdddc7f7048759df4";
     };
     no-chat-reports = fetchurl {
-      url = "https://cdn.modrinth.com/data/qQyHxfxd/versions/D8K0KJXM/NoChatReports-FABRIC-1.21.1-v2.9.1.jar";
-      sha512 = "23bb4a8a6a3f7071281cf97560e12f37e1f5f638a156e3fcb92a50ff0091f1fcfa3e090e7745e4b1175e7c2c784e38d73536a1044db1bf225a182fab758a5a29";
+      url = "https://cdn.modrinth.com/data/qQyHxfxd/versions/ZV8eL55E/NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar";
+      sha512 = "292a3623b5addb17e9f15681a4f2534562e9882ef809e504f49da4778fafc12e21a71995b5d05554d435201f401ace1e86af50e6e26f6ce9d203a5896a1ece21";
     };
     scalable-lux = fetchurl {
-      url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/Yx1tgJMI/ScalableLux-0.1.0.1%2Bfabric.d0d58ab-all.jar";
-      sha512 = "bbfe02184c3bf3b0da28175574a5a236ce7c9acc00069addd69770857f2ac572924893f3eb033bbbc965afa9779c7a7f8fc54168f9e90481a40de92f6ee3645f";
+      url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/j10HNoNf/ScalableLux-0.1.0.1%2Bneoforge.1cb1e91-all.jar";
+      sha512 = "9378b6a70eca81b018121c01a1467c16245ee3f0bb3cfeece6e9045508ae18834256aed4a72d045df9fc3feca94f006518788260e47094173fa64c39d8450223";
     };
   };
 
@@ -35,6 +31,31 @@ in
   ultimate-plane-mod = fetchurl {
     url = "https://cdn.modrinth.com/data/qLDTK94S/versions/r9cNkxGw/plane-neoforge-1.21.1-1.5.5.jar";
     sha512 = "26da044f9b39af122a0ae2a16c57606b7421781c581da317227b9a4b7d3fd4019aa44476416f09e7804c860c0fb91a8283b3780ff88e86240d2ba10ce0787a12";
+  };
+
+  car = fetchurl {
+    url = "https://cdn.modrinth.com/data/DCPUF5Rv/versions/pdJf8Ces/car-neoforge-1.21.1-1.0.46.jar";
+    sha512 = "8cdf98c82f58c0175c28016c7e43ce1af388be784c4ddab8b9d74982bf79e476261737aef65527469b23d860cf7c411435a0d1505df9b5937a4c2dc3053dcf50";
+  };
+
+  bblcore = fetchurl {
+    url = "https://cdn.modrinth.com/data/tfpHINm8/versions/BQtVuunR/bblcore-1.21-1.3.20.jar";
+    sha512 = "e1a52287267f3c8920d4a3fad368e5e7558b2a3b1b698b8f2b0bd9302cce2fbbc71b18cd2d33186de73b38ca58814d527e0d3aace3fedbf525975f5a3ade0eaf";
+  };
+
+  many-more-ores-and-crafts = fetchurl {
+    url = "https://cdn.modrinth.com/data/6kAZrZHA/versions/Ai3xBhul/many_more_ores_and_crafts-NeoForge-1.21.1-1.1.2.jar";
+    sha512 = "0d32a6379ac994a5264cc10a25d84314717b88344d82bf84d174faafd05d8e051becfc1733211ab1e1db2d1dd3d8520a63b35791843351a5256d177575df125b";
+  };
+
+  jetpack = fetchurl {
+    url = "https://cdn.modrinth.com/data/e2At55pl/versions/zEF9SUdj/jetpack-1.0.0-neoforge-1.21.1.jar";
+    sha512 = "8c75a7c60e309473333d137c4e73c90ee529df6df0ba92866803b635c8128b1f428b529582ac5121332bc14b7ccf15a1d9c522264c2336b208e5e3255955fb7e";
+  };
+
+  ciggycraft = fetchurl {
+    url = "https://cdn.modrinth.com/data/EqIpFduf/versions/9FEo8baS/ciggycraft-1.0.3.jar";
+    sha512 = "ef0951d6cb7ab82f8faa47d428bc9ceba51a5c15d479a75a1ffc689e909d02497ec7997a83010f1f3b2fd6ec2a19f3c2609d66c230ce0fe7ab9a1714ec20139e";
   };
 
   building = {

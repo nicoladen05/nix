@@ -17,6 +17,11 @@ in
       enable = true;
       mods = mods.default // {
         bbl-casting = mods.bbl-casting;
+        bblcore = mods.bblcore;
+        car = mods.car;
+        ciggycraft = mods.ciggycraft;
+        jetpack = mods.jetpack;
+        many-more-ores-and-crafts = mods.many-more-ores-and-crafts;
         ultimate-plane-mod = mods.ultimate-plane-mod;
       };
     };
