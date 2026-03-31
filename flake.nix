@@ -179,6 +179,7 @@
           inputs.deploy-rs.packages.x86_64-linux.deploy-rs
           pkgs.nil
           pkgs.nixd
+          pkgs.nixfmt
         ];
       };
 
@@ -187,6 +188,7 @@
           inputs.deploy-rs.packages.aarch64-linux.deploy-rs
           pkgs.nil
           pkgs.nixd
+          pkgs.nixfmt
         ];
       };
 

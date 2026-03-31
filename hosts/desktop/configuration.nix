@@ -120,5 +120,9 @@ in
 
   nix.settings.trusted-users = [ "@wheel" ];
 
+    services.vaultwarden = { 
+      enable = true; 
+      }; 
+
   system.stateVersion = "24.05";
 }
