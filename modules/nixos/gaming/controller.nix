@@ -18,5 +18,9 @@
         options bluetooth disable_ertm=Y
       '';
     };
+
+    environment.sessionVariables = {
+      SDL_JOYSTICK_HIDAPI = 0;
+    };
   };
 }
