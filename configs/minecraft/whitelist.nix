@@ -12,5 +12,6 @@
     duschlecht5 = "84f553ba-99d0-47fd-90e8-c48868f743c6";
     jonas_23 = "95395250-c78c-4375-8173-f5275a091628";
     rocketnite11 = "f369e1ff-e0a6-480f-bd2d-1e4dd14c40f6";
+    Artemagfusbilder = "ada93343-6451-49e6-acc9-5310b2f01ee6";
   };
 }
