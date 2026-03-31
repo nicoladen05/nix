@@ -24,6 +24,7 @@ in
         many-more-ores-and-crafts = mods.many-more-ores-and-crafts;
         ultimate-plane-mod = mods.ultimate-plane-mod;
         falling-tree = mods.falling-tree;
+        psychedelicraft = mods.psychedelicraft;
       };
     };
   };
