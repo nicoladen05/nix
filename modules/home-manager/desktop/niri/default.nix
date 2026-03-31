@@ -59,5 +59,15 @@ in
         }
       ];
     };
+
+    # Apps in dark mode
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = lib.mkForce "prefer-dark";
+        };
+      };
+    };
   };
 }
