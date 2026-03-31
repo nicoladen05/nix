@@ -58,6 +58,11 @@ in
     sha512 = "ef0951d6cb7ab82f8faa47d428bc9ceba51a5c15d479a75a1ffc689e909d02497ec7997a83010f1f3b2fd6ec2a19f3c2609d66c230ce0fe7ab9a1714ec20139e";
   };
 
+  falling-tree = fetchurl {
+    url = "https://cdn.modrinth.com/data/Fb4jn8m6/versions/wxGXaJMA/FallingTree-1.21.1-1.21.1.11.jar";
+    sha512 = "21876b270ca40e3ad6168423f2aba04460f590be191c5558d53e4f542993efa6070589029cb3218557309b096cd920e4da65e53f19687b86c638ec6c342d83e5";
+  };
+
   building = {
     axiom = fetchurl {
       url = "https://cdn.modrinth.com/data/N6n5dqoA/versions/M0Jr2ivY/Axiom-5.2.1-for-MC1.21.11.jar";
