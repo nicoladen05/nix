@@ -100,6 +100,9 @@
 
           python3
           typst
+
+          nixd
+          nixfmt
         ]
         ++ lib.optionals config.packages.productivity.enable [
           obsidian
