@@ -111,7 +111,6 @@ in
   gaming = {
     enable = true;
     jovian.enable = true;
-    controller.xbox.enable = true;
 
     assetto-corsa.enable = true;
   };
@@ -119,10 +118,6 @@ in
   nvf.enable = true;
 
   nix.settings.trusted-users = [ "@wheel" ];
-
-    services.vaultwarden = { 
-      enable = true; 
-      }; 
 
   system.stateVersion = "24.05";
 }
