@@ -96,6 +96,8 @@
           mpv
         ]
         ++ lib.optionals config.packages.coding.enable [
+          vscode
+
           python3
           typst
         ]
