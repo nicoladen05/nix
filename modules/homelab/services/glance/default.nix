@@ -291,11 +291,6 @@ in
                         url = "https://esphome.taube.party";
                         icon = "sh:esphome";
                       }
-                      {
-                        title = "Shelfmark";
-                        url = "https://shelfmark.taube.party";
-                        icon = "sh:shelfmark";
-                      }
                     ];
                   }
                   {
@@ -312,6 +307,11 @@ in
                         title = "Audiobookshelf";
                         url = "https://audiobookshelf.taube.party";
                         icon = "sh:audiobookshelf";
+                      }
+                      {
+                        title = "Shelfmark";
+                        url = "https://shelfmark.taube.party";
+                        icon = "sh:shelfmark";
                       }
                       {
                         title = "Sonarr";
