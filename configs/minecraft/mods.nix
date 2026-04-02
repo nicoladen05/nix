@@ -66,7 +66,7 @@ in
   military-tanks-helicopters = fetchurl {
     url = "https://cdn.modrinth.com/data/4sGxNWY3/versions/AoeJmaHP/tanks-1.0.0.jar";
     sha512 = "f93c3a48dc1c74ea9a20c42279ca277d963160a02eee7e23e9b583aa5b19ecaffd218ed0b2173c31d47f880506e902c611b02d5e2efcc3834287f617ca5fc410";
-  }
+  };
 
   building = {
     axiom = fetchurl {
