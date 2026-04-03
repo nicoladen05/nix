@@ -192,6 +192,9 @@
         ];
       };
 
+      # Checks
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
+
       # DeployRS Nodes
       deploy.nodes.vps = {
         hostname = "130.61.231.173";
