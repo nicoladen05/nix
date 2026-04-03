@@ -58,11 +58,6 @@ in
     sha512 = "ef0951d6cb7ab82f8faa47d428bc9ceba51a5c15d479a75a1ffc689e909d02497ec7997a83010f1f3b2fd6ec2a19f3c2609d66c230ce0fe7ab9a1714ec20139e";
   };
 
-  falling-tree = fetchurl {
-    url = "https://cdn.modrinth.com/data/Fb4jn8m6/versions/wxGXaJMA/FallingTree-1.21.1-1.21.1.11.jar";
-    sha512 = "21876b270ca40e3ad6168423f2aba04460f590be191c5558d53e4f542993efa6070589029cb3218557309b096cd920e4da65e53f19687b86c638ec6c342d83e5";
-  };
-
   building = {
     axiom = fetchurl {
       url = "https://cdn.modrinth.com/data/N6n5dqoA/versions/M0Jr2ivY/Axiom-5.2.1-for-MC1.21.11.jar";
@@ -76,13 +71,15 @@ in
 
   cheaty = {
     falling-tree = fetchurl {
-      url = "https://cdn.modrinth.com/data/Fb4jn8m6/versions/s7RpQ7ah/FallingTree-1.21.11-1.21.11.2.jar";
-      sha512 = "4414f5850297c1b31ab1150d71d7dde44e2132fdaef4b286df8785be9f975e98c45317bba7a22fb1612f287dfebe875b7b69444a151a64cb64dd38c4f7b433f9";
+      url = "https://cdn.modrinth.com/data/Fb4jn8m6/versions/wxGXaJMA/FallingTree-1.21.1-1.21.1.11.jar";
+      sha512 = "21876b270ca40e3ad6168423f2aba04460f590be191c5558d53e4f542993efa6070589029cb3218557309b096cd920e4da65e53f19687b86c638ec6c342d83e5";
     };
+
     infinite-trade = fetchurl {
-      url = "https://cdn.modrinth.com/data/U3eoZT3o/versions/QmTnAQac/infinitetrading-1.21.11-4.6.jar";
-      sha512 = "03dd37e306b71c0588d89b395f4862e80deedaca4facbda721052d346e56f5385f88bd56382fc5cbeb3a91488f2dd33446612c32392b677f9a1f057edb2d78e8";
+      url = "https://cdn.modrinth.com/data/U3eoZT3o/versions/QV78XqMj/infinitetrading-1.21.1-4.6.jar";
+      sha512 = "481b5ff880cc5b8adbda34f6e082c9df51956b0d2d2418703bd21257d71ad914b4f696edeeeaeec960fff475c0b2108923b3bb532abee665c4b5a075a1e26363";
     };
+
     collective = fetchurl {
       url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/T8rv7kwo/collective-1.21.11-8.13.jar";
       sha512 = "af145a48ac89346c7b1ffa8c44400a91a9908e4d1df0f6f1a603ff045b1fd82d9aa041aea27a682c196b266c0daf84cb5b7b8d83b07ee53e2bc1a5c210d19a1b";

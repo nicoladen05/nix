@@ -23,7 +23,8 @@ in
         jetpack = mods.jetpack;
         many-more-ores-and-crafts = mods.many-more-ores-and-crafts;
         ultimate-plane-mod = mods.ultimate-plane-mod;
-        falling-tree = mods.falling-tree;
+        falling-tree = mods.cheaty.falling-tree;
+        infinite-trade = mods.cheaty.infinite-trade;
       };
     };
   };
