@@ -137,6 +137,13 @@ in
             ];
             endpoint = "ddns.nicoladen.dev:51820";
           };
+          oma = {
+            publicKey = "hmwzZN/BHlevUy0amqL/N9VlFP6+NynmmqBm0nziVGw=";
+            allowedIPs = [
+              "192.168.255.10/32"
+            ];
+            endpoint = "ddns.nicoladen.dev:51820";
+          }
 
           # Friends
           jakob = {
