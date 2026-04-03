@@ -143,7 +143,7 @@ in
               "192.168.255.10/32"
             ];
             endpoint = "ddns.nicoladen.dev:51820";
-          }
+          };
 
           # Friends
           jakob = {
