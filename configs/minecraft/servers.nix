@@ -15,7 +15,7 @@ in
     whitelist = joinedWhitelist;
     mods = {
       enable = true;
-      mods = mods.default // {
+      mods = mods.default // mods.cheaty // {
         bbl-casting = mods.bbl-casting;
         bblcore = mods.bblcore;
         car = mods.car;
@@ -23,8 +23,6 @@ in
         jetpack = mods.jetpack;
         many-more-ores-and-crafts = mods.many-more-ores-and-crafts;
         ultimate-plane-mod = mods.ultimate-plane-mod;
-        falling-tree = mods.cheaty.falling-tree;
-        infinite-trade = mods.cheaty.infinite-trade;
       };
     };
   };
