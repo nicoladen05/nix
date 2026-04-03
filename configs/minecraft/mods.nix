@@ -81,8 +81,8 @@ in
     };
 
     collective = fetchurl {
-      url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/T8rv7kwo/collective-1.21.11-8.13.jar";
-      sha512 = "af145a48ac89346c7b1ffa8c44400a91a9908e4d1df0f6f1a603ff045b1fd82d9aa041aea27a682c196b266c0daf84cb5b7b8d83b07ee53e2bc1a5c210d19a1b";
+      url = "https://cdn.modrinth.com/data/e0M1UDsY/versions/FFOc67PN/collective-1.21.1-8.12.jar";
+      sha512 = "5661e91074f0eefa92eaa6846373e2c0b38af660b58588126d024a6857f14375e9f2d4452cdcf9655977d41da6e12af87c09ca27dd84bcf82385e0cf06fd494d";
     };
   };
 }
