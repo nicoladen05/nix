@@ -142,7 +142,7 @@ in
   programs.mosh = {
     enable = true;
     openFirewall = true;
-  }
+  };
 
   services.fail2ban.enable = true;
 
