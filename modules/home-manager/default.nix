@@ -9,8 +9,7 @@
   imports = [
     ./terminal
     ./desktop
-    ./firefox.nix
-    ./zed.nix
+    ./programs
   ];
 
   options = {
