@@ -1,15 +1,6 @@
 {
   description = "Nixos config flake";
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nixos-raspberrypi.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -32,8 +23,6 @@
     deploy-rs.url = "github:serokell/deploy-rs";
 
     stylix.url = "github:danth/stylix";
-
-    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -138,20 +127,6 @@
         ];
       };
 
-      nixosConfigurations.travelrouter = inputs.nixos-raspberrypi.lib.nixosSystem {
-        system = "aarch64-linux";
-        specialArgs = {
-          inherit network inputs;
-          inherit (inputs) nixos-raspberrypi;
-        };
-        modules = with inputs; [
-          ./hosts/travelrouter/configuration.nix
-          nvf.nixosModules.default
-          sops-nix.nixosModules.sops
-          stylix.nixosModules.stylix
-        ];
-      };
-
       # HomeManager Configurations
       homeConfigurations.nico = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
@@ -170,8 +145,6 @@
       # Packages
       packages."x86_64-linux".pycord = pkgs.callPackage ./packages/pycord.nix { };
       packages."x86_64-linux".wavelink = pkgs.callPackage ./packages/wavelink.nix { };
-      packages."aarch64-linux".travelrouterSdImage =
-        self.nixosConfigurations.travelrouter.config.system.build.sdImage;
 
       # Dev Shells
       devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
@@ -192,9 +165,6 @@
         ];
       };
 
-      # Checks
-      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
-
       # DeployRS Nodes
       deploy.nodes.vps = {
         hostname = "130.61.231.173";
@@ -214,17 +184,6 @@
           user = "root";
           sshUser = "nico";
           path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.server;
-        };
-      };
-
-      deploy.nodes.travelrouter = {
-        hostname = "192.168.2.103";
-        remoteBuild = true;
-        interactiveSudo = true;
-        profiles.system = {
-          user = "root";
-          sshUser = "nico";
-          path = inputs.deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.travelrouter;
         };
       };
     };
