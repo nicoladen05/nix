@@ -11,6 +11,12 @@ in
 {
   options = {
     home-manager.opencode.enable = lib.mkEnableOption "enable opencode";
+
+    home-manager.opencode.haMcpEnvFile = lib.mkOption {
+      type = lib.types.nullOr lib.types.path;
+      default = /run/secrets/rendered/homeassistant/ha_mcp_env;
+      description = "Path to an env file containing Home Assistant MCP credentials.";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -37,6 +43,18 @@ in
         {
           frontend-design = builtins.readFile "${frontend-design-skill}/SKILL.md";
         };
+
+      # MCPs that should be disabled by default
+      settings.mcp.ha-mcp = {
+        enabled = false;
+        type = "local";
+
+        command = [
+          "${pkgs.bash}/bin/bash"
+          "-lc"
+          "source ${lib.escapeShellArg (toString cfg.haMcpEnvFile)} && ${pkgs.uv}/bin/uvx ha-mcp"
+        ];
+      };
     };
 
     programs.mcp = {

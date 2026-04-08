@@ -36,6 +36,9 @@
 
     sops.secrets."cloudflare/api_token" = { };
 
+    sops.secrets."homeassistant/url" = { };
+    sops.secrets."homeassistant/token" = { };
+
     sops.secrets."restic/password" = { };
     sops.secrets."restic/repository" = { };
 
@@ -47,6 +50,15 @@
     sops.templates."glance/vps_remote_env".content = ''
       TOKEN=${config.sops.placeholder."glance/vps_remote"}
     '';
+
+    sops.templates."homeassistant/ha_mcp_env" = {
+      content = ''
+        export HOMEASSISTANT_URL=${config.sops.placeholder."homeassistant/url"}
+        export HOMEASSISTANT_TOKEN=${config.sops.placeholder."homeassistant/token"}
+      '';
+      owner = config.system.userName;
+      mode = "0400";
+    };
 
     sops.secrets."glance_restic/password" = { };
     sops.secrets."glance_restic/url" = { };
