@@ -60,24 +60,6 @@
             "isort"
           ];
         };
-        ts = {
-          enable = true;
-          extraDiagnostics.enable = true;
-          format.enable = true;
-          format.type = [ "prettierd" ];
-          lsp.enable = true;
-          lsp.servers = [ "ts_ls" ];
-          treesitter.enable = true;
-        };
-        html = {
-          enable = true;
-          treesitter.enable = true;
-          treesitter.autotagHtml = true;
-        };
-        tailwind = {
-          enable = true;
-          lsp.enable = true;
-        };
         csharp = {
           enable = true;
           lsp.enable = true;
