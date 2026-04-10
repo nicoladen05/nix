@@ -12,7 +12,7 @@ in
 {
   imports = [
     ./brightness.nix
-    # ./quickshell.nix
+    ./quickshell
     ./wlsunset.nix
   ];
 

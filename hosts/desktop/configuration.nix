@@ -95,8 +95,8 @@ in
     stylix = {
       enable = true;
       colorScheme = "penumbra-dark-contrast-plus-plus";
-      wallpaper = "https://raw.githubusercontent.com/tecdrop/pitch-black-wallpaper-images/f3b0910b687bf01d6cd6c5f965b398508db05c04/pitch-black-wallpaper-4k-3840x2160-1bit.png";
-      wallpaperHash = "sha256-9YsrBJnOih5/3vbVQsqV/ACkyFVF5guY90T+7mlt2gw=";
+      wallpaper = "https://images.unsplash.com/photo-1729188430272-25eff8302c0e?ixlib=rb-4.1.0&w=3840&q=85&fm=jpg&crop=entropy&cs=tinysrgb";
+      wallpaperHash = "sha256-uqjhIzWPHaMlSfaUEIA6WxfHjyyb6rzp+VBtCclUlBY=";
     };
   };
 

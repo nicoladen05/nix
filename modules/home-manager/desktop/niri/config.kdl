@@ -297,7 +297,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: Quickshell Launcher" { spawn "quickshell-launcher-toggle"; }
     Mod+Period hotkey-overlay-title="Actions Menu: fuzzel" { spawn "niri-actions-menu"; }
     Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
