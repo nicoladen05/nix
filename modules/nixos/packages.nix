@@ -97,6 +97,7 @@
         ]
         ++ lib.optionals config.packages.coding.enable [
           vscode
+          t3-code
 
           python3
           typst

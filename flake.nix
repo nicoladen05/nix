@@ -145,6 +145,7 @@
       # Packages
       packages."x86_64-linux".pycord = pkgs.callPackage ./packages/pycord.nix { };
       packages."x86_64-linux".wavelink = pkgs.callPackage ./packages/wavelink.nix { };
+      packages."x86_64-linux".t3-code = pkgs.callPackage ./packages/t3-code.nix { };
 
       # Dev Shells
       devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
