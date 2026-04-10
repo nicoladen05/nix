@@ -106,10 +106,8 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
-
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -117,7 +115,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#5f6368"
 
         // Color of the ring on inactive monitors.
         //
@@ -147,9 +145,9 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        width 1
+        active-color "#8f949b"
+        inactive-color "#5f6368"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -165,7 +163,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -187,16 +185,16 @@ layout {
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 28
 
         // Spread expands the shadow.
-        spread 5
+        spread 4
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=5
+        offset x=0 y=6
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#0008"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -290,7 +288,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
