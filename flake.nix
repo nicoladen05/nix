@@ -34,11 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     prusa-octoapp-proxy = {
@@ -71,8 +66,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -138,7 +133,6 @@
           ./home/nico.nix
           stylix.homeModules.stylix
           nvf.homeManagerModules.default
-          vicinae.homeManagerModules.default
         ];
       };
 

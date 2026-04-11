@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    inputs.vicinae.homeManagerModules.default
+    inputs.noctalia.homeModules.default
     ../../modules/home-manager
   ];
 

@@ -12,7 +12,8 @@ in
 {
   imports = [
     ./brightness.nix
-    ./quickshell
+    ./noctalia.nix
+    ./vicinae.nix
     ./wlsunset.nix
   ];
 
@@ -21,8 +22,6 @@ in
   };
 
   config = lib.mkIf config.home-manager.niri.enable {
-    nixpkgs.overlays = [ inputs.quickshell.overlays.default ];
-
     home.packages = with pkgs; [
       xwayland-satellite
       wl-clipboard

@@ -13,7 +13,6 @@ in
     ./mako.nix
     ./rofi.nix
     ./waybar.nix
-    ./vicinae.nix
   ];
 
   options = {
@@ -73,7 +72,6 @@ in
   config = lib.mkIf config.home-manager.hyprland.enable {
     home-manager.mako.enable = true;
     home-manager.rofi.enable = true;
-    home-manager.vicinae.enable = true;
     home-manager.waybar.enable = true;
 
     gtk.enable = true;
@@ -321,7 +319,6 @@ in
         "$mainMod, E, exec, $fileManager"
         "$mainMod SHIFT, Space, togglefloating,"
         "$mainMod, Space, exec, $menu"
-        "ALT, Space, exec, vicinae toggle"
         "$mainMod, P, pseudo, # dwindle"
         "$mainMod, J, togglesplit, # dwindle"
 

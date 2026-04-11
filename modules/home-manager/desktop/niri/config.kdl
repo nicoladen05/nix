@@ -185,16 +185,16 @@ layout {
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 28
+        softness 20
 
         // Spread expands the shadow.
-        spread 4
+        spread 0
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=6
+        offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0008"
+        color "rgba(0, 0, 0, 0.3)"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -217,8 +217,7 @@ layout {
 
 spawn-sh-at-startup "swaybg -i ~/.config/niri/wallpaper.jpg -m fill"
 
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-at-startup "noctalia-shell"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -289,7 +288,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
@@ -297,7 +296,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: Quickshell Launcher" { spawn "quickshell-launcher-toggle"; }
+    Mod+Space hotkey-overlay-title="Launcher: Vicinae" { spawn "vicinae" "toggle"; }
+    Mod+D hotkey-overlay-title="Launcher: Noctalia" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+Period hotkey-overlay-title="Actions Menu: fuzzel" { spawn "niri-actions-menu"; }
     Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 

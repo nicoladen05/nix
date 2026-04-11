@@ -7,7 +7,6 @@
 {
   imports = [
     ../../modules/home-manager
-    inputs.vicinae.homeManagerModules.default
   ];
 
   home-manager = {
