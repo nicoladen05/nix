@@ -298,8 +298,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Launcher: Vicinae" { spawn "vicinae" "toggle"; }
     Mod+D hotkey-overlay-title="Launcher: Noctalia" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+Period hotkey-overlay-title="Actions Menu: fuzzel" { spawn "niri-actions-menu"; }
-    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Shift+L hotkey-overlay-title="Lock the Screen: Noctalia" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -483,7 +482,7 @@ binds {
     //
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
-    Mod+Escape hotkey-overlay-title="Power Menu: fuzzel" { spawn "niri-power-menu"; }
+    Mod+Escape hotkey-overlay-title="Power Menu: Noctalia" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.

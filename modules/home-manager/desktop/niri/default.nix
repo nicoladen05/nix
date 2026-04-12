@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  inputs,
   ...
 }:
 
@@ -11,7 +10,6 @@ let
 in
 {
   imports = [
-    ./brightness.nix
     ./noctalia.nix
     ./vicinae.nix
     ./wlsunset.nix
@@ -34,30 +32,7 @@ in
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
-    home.file.".config/niri/wallpaper.jpg".source = ./wallpaper.jpg;
-
-    programs.fuzzel = {
-      enable = true;
-      settings = {
-        main = {
-          font = lib.mkForce "monospace:size=12";
-        };
-        border = {
-          width = 2;
-          radius = 0;
-        };
-      };
-    };
-
-    services.swayidle = {
-      enable = true;
-      timeouts = [
-        {
-          timeout = 60;
-          command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
-        }
-      ];
-    };
+    home.file.".config/niri/wallpaper.jpg".source = config.stylix.image;
 
     # Apps in dark mode
     dconf = {
