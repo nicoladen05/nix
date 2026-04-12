@@ -9,10 +9,31 @@
   config = lib.mkIf config.home-manager.niri.enable {
     home.packages = with pkgs; [
       libnotify
+
+      grim
+      slurp
+      wl-clipboard
+      imagemagick
+      zbar
+      curl
+      translate-shell
+      wl-screenrec
+      ffmpeg
+      gifski
+
+      (tesseract.override {
+        enableLanguages = [
+          "eng"
+          "deu"
+        ];
+      })
     ];
+
+    services.swayidle.enable = true;
 
     programs.noctalia-shell = {
       enable = true;
+
       settings = {
         settingsVersion = 59;
         bar = {
@@ -383,28 +404,7 @@
                 id = "NightLight";
               }
               {
-                defaultSettings = {
-                  audioCodec = "opus";
-                  audioSource = "default_output";
-                  colorRange = "limited";
-                  copyToClipboard = false;
-                  customReplayDuration = "30";
-                  directory = "";
-                  filenamePattern = "recording_yyyyMMdd_HHmmss";
-                  frameRate = "60";
-                  hideInactive = false;
-                  iconColor = "none";
-                  quality = "very_high";
-                  replayDuration = "30";
-                  replayEnabled = false;
-                  replayStorage = "ram";
-                  resolution = "original";
-                  restorePortalSession = false;
-                  showCursor = true;
-                  videoCodec = "h264";
-                  videoSource = "portal";
-                };
-                id = "plugin:screen-recorder";
+                id = "plugin:screen-toolkit";
               }
             ];
           };
@@ -686,6 +686,44 @@
           gridSnap = false;
           gridSnapScale = false;
           monitorWidgets = [ ];
+        };
+      };
+
+      plugins = {
+        sources = [
+          {
+            enabled = true;
+            name = "Noctalia Plugins";
+            url = "https://github.com/noctalia-dev/noctalia-plugins";
+          }
+        ];
+
+        states =
+          let
+            plugins = [
+              "privacy-indicator"
+              "network-manager-vpn"
+              "screen-toolkit"
+              "timer"
+              "polkit-agent"
+            ];
+          in
+          builtins.listToAttrs (
+            map (plugin: {
+              name = plugin;
+              value = {
+                enabled = true;
+                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+              };
+            }) plugins
+          );
+
+        version = 2;
+      };
+
+      pluginSettings = {
+        privacy-indicator = {
+          hideInactive = true;
         };
       };
     };
