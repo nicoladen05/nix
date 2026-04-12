@@ -5,9 +5,6 @@
   ...
 }:
 
-let
-  menus = import ./menus.nix { inherit pkgs; };
-in
 {
   imports = [
     ./noctalia.nix
@@ -27,8 +24,6 @@ in
       xdg-desktop-portal-gnome
       swaybg
       playerctl
-      menus.niriPowerMenu
-      menus.niriActionsMenu
     ];
 
     home.file.".config/niri/config.kdl".source = ./config.kdl;
