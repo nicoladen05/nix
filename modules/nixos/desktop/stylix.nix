@@ -61,8 +61,8 @@
       hash = "${config.desktop.stylix.wallpaperHash}";
     };
 
-    stylix.cursor.package = pkgs.posy-cursors;
-    stylix.cursor.name = "Posy_Cursor_Black";
+    stylix.cursor.package = pkgs.apple-cursor;
+    stylix.cursor.name = "macOS";
     stylix.cursor.size = 30;
 
     stylix.opacity = {
