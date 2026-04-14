@@ -63,7 +63,7 @@
 
     stylix.cursor.package = pkgs.apple-cursor;
     stylix.cursor.name = "macOS";
-    stylix.cursor.size = 30;
+    stylix.cursor.size = 32;
 
     stylix.opacity = {
       terminal = 1.0;
