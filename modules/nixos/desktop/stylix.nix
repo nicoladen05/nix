@@ -86,7 +86,7 @@
     };
 
     stylix.fonts.sizes = {
-      terminal = 11;
+      terminal = 12;
       desktop = 10;
       applications = 10;
     };
