@@ -115,7 +115,7 @@
               }
               {
                 defaultSettings = {
-                  activeColor = "primary";
+                  activeColor = "error";
                   enableToast = true;
                   hideInactive = false;
                   iconSpacing = 4;
