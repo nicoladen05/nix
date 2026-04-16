@@ -120,6 +120,11 @@
           }
         ];
       };
+
+      session = {
+        weatherLocation = "Ehmen, Niedersachsen";
+        weatherCoordinates = "52.3990844,10.6992485";
+      };
     };
 
     # Use DMS polkit agent instead of auto-starting niri-flake-polkit.
