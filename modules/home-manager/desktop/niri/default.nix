@@ -20,8 +20,6 @@
   };
 
   config = lib.mkIf config.home-manager.niri.enable {
-    programs.niri.package = pkgs.niri;
-
     home.packages = with pkgs; [
       xwayland-satellite
       wl-clipboard
