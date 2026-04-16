@@ -95,8 +95,8 @@ in
     stylix = {
       enable = true;
       colorScheme = "penumbra-dark-contrast-plus-plus";
-      wallpaper = "https://images.unsplash.com/photo-1729188430272-25eff8302c0e?ixlib=rb-4.1.0&w=3840&q=85&fm=jpg&crop=entropy&cs=tinysrgb";
-      wallpaperHash = "sha256-uqjhIzWPHaMlSfaUEIA6WxfHjyyb6rzp+VBtCclUlBY=";
+      wallpaper = "https://images.unsplash.com/photo-1744614053463-491122164435?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb";
+      wallpaperHash = "sha256-rJqDhxemccIarYKcIe8rFdufZArwpHPQGoNbKO34stk=";
     };
   };
 
