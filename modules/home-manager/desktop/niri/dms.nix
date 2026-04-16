@@ -9,6 +9,8 @@
   imports = [
     inputs.dms.homeModules.dank-material-shell
     inputs.dms.homeModules.niri
+
+    inputs.danksearch.homeModules.default
   ];
 
   config = lib.mkIf config.home-manager.niri.enable {
@@ -126,6 +128,8 @@
         weatherCoordinates = "52.3990844,10.6992485";
       };
     };
+
+    programs.dsearch.enable = true;
 
     # Use DMS polkit agent instead of auto-starting niri-flake-polkit.
     systemd.user.services.niri-flake-polkit.Install.WantedBy = lib.mkForce [ ];
