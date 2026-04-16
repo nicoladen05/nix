@@ -20,6 +20,21 @@
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
 
+    # Display Manager
+    services.displayManager = {
+      enable = true;
+
+      dms-greeter = {
+        enable = true;
+        compositor.name = "niri";
+      };
+    };
+
+    # Boot Animation
+    boot.plymouth = {
+      enable = true;
+    };
+
     # XDG Portals
     xdg.portal = {
       enable = true;
