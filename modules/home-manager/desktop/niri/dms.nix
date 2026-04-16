@@ -121,6 +121,49 @@
             widgetOutlineEnabled = false;
           }
         ];
+
+        controlCenterWidgets = [
+          {
+            id = "volumeSlider";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "brightnessSlider";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "wifi";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "bluetooth";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "audioOutput";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "audioInput";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "doNotDisturb";
+            enabled = true;
+            width = 50;
+          }
+          {
+            id = "builtin_vpn";
+            enabled = true;
+            width = 50;
+          }
+        ];
       };
 
       session = {
