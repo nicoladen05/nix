@@ -1,13 +1,16 @@
 {
   lib,
   pkgs,
+  inputs,
   config,
   ...
 }:
 
 {
   imports = [
-    ./noctalia.nix
+    inputs.niri.homeModules.config
+    ./niri.nix
+    ./dms.nix
     ./vicinae.nix
     ./wlsunset.nix
   ];
@@ -17,17 +20,16 @@
   };
 
   config = lib.mkIf config.home-manager.niri.enable {
+    programs.niri.package = pkgs.niri;
+
     home.packages = with pkgs; [
       xwayland-satellite
       wl-clipboard
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
-      swaybg
       playerctl
+      libnotify
     ];
-
-    home.file.".config/niri/config.kdl".source = ./config.kdl;
-    home.file.".config/niri/wallpaper.jpg".source = config.stylix.image;
 
     # Apps in dark mode
     dconf = {

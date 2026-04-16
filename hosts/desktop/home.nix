@@ -1,10 +1,8 @@
 {
-  inputs,
   ...
 }:
 {
   imports = [
-    inputs.noctalia.homeModules.default
     ../../modules/home-manager
   ];
 
@@ -18,7 +16,6 @@
         longitude = 10.78;
       };
     };
-    mako.enable = true;
 
     terminal.enable = true;
     zed.enable = true;

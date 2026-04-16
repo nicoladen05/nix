@@ -1,0 +1,128 @@
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
+
+{
+  imports = [
+    inputs.dms.homeModules.dank-material-shell
+    inputs.dms.homeModules.niri
+  ];
+
+  config = lib.mkIf config.home-manager.niri.enable {
+
+    programs.dank-material-shell = {
+      enable = true;
+
+      niri = {
+        enableSpawn = true;
+        includes = {
+          enable = true;
+          override = false;
+        };
+      };
+
+      enableSystemMonitoring = true;
+      enableVPN = true;
+      enableClipboardPaste = true;
+
+      settings = {
+        scrollTitleEnabled = false;
+        audioVisualizerEnabled = false;
+        centeringMode = "geometric";
+
+        acMonitorTimeout = 60;
+        acLockTimeout = 300;
+        acSuspendTimeout = 1800;
+        lockBeforeSuspend = true;
+
+        lockScreenNotificationMode = 2;
+        notificationCompactMode = true;
+
+        powerMenuDefaultAction = "lock";
+
+        barConfigs = [
+          {
+            id = "default";
+            name = "Main Bar";
+            enabled = true;
+            position = 0;
+            screenPreferences = [ "all" ];
+            showOnLastDisplay = true;
+            leftWidgets = [
+              {
+                id = "clock";
+                enabled = true;
+                clockCompactMode = false;
+              }
+              {
+                id = "weather";
+                enabled = true;
+              }
+              {
+                id = "music";
+                enabled = true;
+                mediaSize = 1;
+              }
+            ];
+            centerWidgets = [
+              {
+                id = "workspaceSwitcher";
+                enabled = true;
+              }
+            ];
+            rightWidgets = [
+              {
+                id = "privacyIndicator";
+                enabled = true;
+              }
+              {
+                id = "systemTray";
+                enabled = true;
+              }
+              {
+                id = "notificationButton";
+                enabled = true;
+              }
+              {
+                id = "controlCenterButton";
+                enabled = true;
+                showBatteryIcon = false;
+                showScreenSharingIcon = false;
+              }
+            ];
+            spacing = 5;
+            innerPadding = 4;
+            bottomGap = 0;
+            transparency = 1.0;
+            widgetTransparency = 1.0;
+            squareCorners = false;
+            noBackground = false;
+            gothCornersEnabled = false;
+            gothCornerRadiusOverride = false;
+            gothCornerRadiusValue = 12;
+            borderEnabled = false;
+            borderColor = "surfaceText";
+            borderOpacity = 1.0;
+            borderThickness = 1;
+            fontScale = 1.0;
+            autoHide = true;
+            autoHideDelay = 250;
+            openOnOverview = false;
+            visible = true;
+            popupGapsAuto = true;
+            popupGapsManual = 4;
+            maximizeWidgetIcons = false;
+            shadowIntensity = 0;
+            widgetOutlineEnabled = false;
+          }
+        ];
+      };
+    };
+
+    # Use DMS polkit agent instead of auto-starting niri-flake-polkit.
+    systemd.user.services.niri-flake-polkit.Install.WantedBy = lib.mkForce [ ];
+  };
+}
