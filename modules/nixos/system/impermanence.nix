@@ -5,12 +5,23 @@
   ...
 }:
 
+let
+  cfg = config.system.impermanence;
+in
 {
   options = {
-    system.impermanence.enable = lib.mkEnableOption "Enable Impermanence with a btrfs root filesystem";
+    system.impermanence = {
+      enable = lib.mkEnableOption "Enable Impermanence with a btrfs root filesystem";
+      rootDrive = lib.mkOption {
+        type = lib.types.str;
+        default = config.fileSystems."/".device;
+        description = "The drive to use for the btrfs root filesystem.";
+      };
+    };
+
   };
 
-  config = lib.mkIf config.system.impermanence.enable {
+  config = lib.mkIf cfg.enable {
     fileSystems."/persistent".neededForBoot = true;
 
     boot.initrd.systemd = {
@@ -32,7 +43,7 @@
 
         script = ''
           mkdir /btrfs_tmp
-          mount /dev/root_vg/root /btrfs_tmp
+          mount ${cfg.rootDrive} /btrfs_tmp
           if [[ -e /btrfs_tmp/root ]]; then
               mkdir -p /btrfs_tmp/old_roots
               timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
