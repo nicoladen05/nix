@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    ./impermanence.nix
     ./nh.nix
     ./nvidia.nix
     ./openvpn.nix

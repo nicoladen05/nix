@@ -49,6 +49,7 @@ in
     enable = true;
     nvidia.enable = true;
     sops.enable = true;
+    impermanence.enable = true;
 
     # User account
     inherit userName;
