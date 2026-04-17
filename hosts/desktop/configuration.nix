@@ -88,6 +88,8 @@ in
     productivity.enable = true;
   };
 
+  programs.uxplay.enable = true;
+
   # Graphical configuration
   desktop = {
     audio.enable = true;
