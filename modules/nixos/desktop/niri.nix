@@ -16,16 +16,16 @@
       NIXOS_OZONE_WL = "1";
     };
 
-    # This patches a flickering bug with niri on nvidia
-    nixpkgs.overlays = [
-      (final: prev: {
-        niri = prev.niri.overrideAttrs (old: {
-          patches = (old.patches or [ ]) ++ [
-            ./niri-flickering-fix.patch
-          ];
-        });
-      })
-    ];
+    # # This patches a flickering bug with niri on nvidia
+    # nixpkgs.overlays = [
+    #   (final: prev: {
+    #     niri = prev.niri.overrideAttrs (old: {
+    #       patches = (old.patches or [ ]) ++ [
+    #         ./niri-flickering-fix.patch
+    #       ];
+    #     });
+    #   })
+    # ];
 
     # Keyring
     services.gnome.gnome-keyring.enable = true;
