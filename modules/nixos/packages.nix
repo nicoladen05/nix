@@ -96,7 +96,7 @@
           mpv
         ]
         ++ lib.optionals config.packages.coding.enable [
-          vscode
+          vscode-fhs
           t3-code
 
           python3
