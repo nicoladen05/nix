@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -6,19 +11,25 @@
   };
 
   config = lib.mkIf config.gaming.steam.enable {
-    programs.steam = {
-      enable = true;
-      package = pkgs.steam;
+    programs = {
+      steam = {
+        enable = true;
+        package = pkgs.steam;
+        localNetworkGameTransfers.openFirewall = true;
+      };
+
+      gamemode = {
+        enable = true;
+      };
+
+      gamescope = {
+        enable = true;
+        capSysNice = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [
       mangohud
-      protonup-ng
-      lutris
     ];
-
-    programs.gamemode = {
-      enable = true;
-    };
   };
 }

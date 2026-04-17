@@ -114,7 +114,6 @@ in
   # Gaming
   gaming = {
     enable = true;
-    jovian.enable = true;
     controller.xbox.enable = true;
 
     assetto-corsa.enable = true;
