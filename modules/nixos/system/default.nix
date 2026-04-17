@@ -9,6 +9,7 @@
   imports = [
     ./impermanence.nix
     ./nh.nix
+    ./nix.nix
     ./nvidia.nix
     ./openvpn.nix
     ./sops.nix
@@ -208,31 +209,5 @@
     };
 
     nixpkgs.config.allowUnfree = true;
-
-    # Nix Settings
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-
-    nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-
-    nix.optimise = {
-      automatic = true;
-      dates = [ "03:45" ];
-    };
-
-    system.autoUpgrade = {
-      enable = true;
-      flake = "github:nicoladen05/nix#${config.system.hostName}";
-      dates = "4:00";
-      flags = [ "-L --refresh" ];
-      upgrade = false;
-      allowReboot = true;
-    };
   };
 }
