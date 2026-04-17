@@ -29,6 +29,7 @@
       enableSystemMonitoring = true;
       enableVPN = true;
       enableClipboardPaste = true;
+      enableCalendarEvents = true;
 
       settings = {
         scrollTitleEnabled = false;

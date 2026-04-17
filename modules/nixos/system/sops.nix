@@ -39,6 +39,13 @@
     sops.secrets."homeassistant/url" = { };
     sops.secrets."homeassistant/token" = { };
 
+    sops.secrets."google/calendar/client_id" = {
+      owner = config.system.userName;
+    };
+    sops.secrets."google/calendar/client_secret" = {
+      owner = config.system.userName;
+    };
+
     sops.secrets."restic/password" = { };
     sops.secrets."restic/repository" = { };
 

@@ -10,6 +10,7 @@
   imports = [
     inputs.niri.homeModules.config
     ./niri.nix
+    ./calendar.nix
     ./dms.nix
     ./vicinae.nix
     ./wlsunset.nix

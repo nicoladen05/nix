@@ -10,6 +10,7 @@
     enable = true;
     niri = {
       enable = true;
+      calendar.enable = true;
       wlsunset = {
         enable = true;
         latitude = 52.42;
