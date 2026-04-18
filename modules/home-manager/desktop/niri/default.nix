@@ -28,7 +28,6 @@
       xdg-desktop-portal-gnome
       playerctl
       libnotify
-      efibootmgr
     ];
 
     # Apps in dark mode
