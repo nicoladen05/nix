@@ -938,7 +938,8 @@
         "nvf": "nvf",
         "prusa-octoapp-proxy": "prusa-octoapp-proxy",
         "sops-nix": "sops-nix",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "zen-browser": "zen-browser"
       }
     },
     "sops-nix": {
@@ -1177,6 +1178,29 @@
       "original": {
         "owner": "Supreeeme",
         "repo": "xwayland-satellite",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776488873,
+        "narHash": "sha256-VOYDLF8/Jderf6riz3PyiCQhsCUfpd4S9NmDT/URgYI=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "d453f29dbf13541981f8acd558fb6b88e5fd7af6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
