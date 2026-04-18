@@ -95,6 +95,7 @@ in
     services.caddy.virtualHosts = {
       "${cfg.url}:444" = lib.mkIf cfg.expose {
         extraConfig = ''
+          import cloudflare_dns
           reverse_proxy 127.0.0.1:8123
         '';
       };
