@@ -27,6 +27,16 @@
     #   })
     # ];
 
+    # Switch boot entry from dms bar
+    environment.systemPackages = [ pkgs.efibootmgr ];
+    security.sudo.extraConfig = ''
+      Cmnd_Alias DMS_EFIBOOTMGR = \
+        /run/current-system/sw/bin/efibootmgr --bootnext [0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f], \
+        /run/current-system/sw/bin/efibootmgr --delete-bootnext
+
+      %wheel ALL=(root) NOPASSWD: DMS_EFIBOOTMGR
+    '';
+
     # Keyring
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = true;
