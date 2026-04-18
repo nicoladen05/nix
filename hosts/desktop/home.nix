@@ -20,6 +20,7 @@
 
     terminal.enable = true;
     zed.enable = true;
+    zen.enable = true;
     opencode.enable = true;
     zathura.enable = true;
     direnv.enable = true;
