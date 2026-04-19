@@ -48,6 +48,7 @@
       dms-greeter = {
         enable = true;
         compositor.name = "niri";
+        configHome = "/home/${config.system.userName}";
       };
     };
 
