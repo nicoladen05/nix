@@ -9,6 +9,7 @@ in
   jakob_modded = {
     host = "vps";
     domain = "mc.nicoladen.dev";
+    backup = true;
     type = "neoforge";
     version = "1.21.1";
     ram = "4G";

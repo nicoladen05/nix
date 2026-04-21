@@ -67,7 +67,7 @@ in
       repositoryFile = config.sops.secrets."restic/repository".path;
       passwordFile = config.sops.secrets."restic/password".path;
       timerConfig = {
-        OnCalendar = "04:00";
+        OnCalendar = "03:00";
       };
       paths = [ "/var/lib/hytale-server" ];
       pruneOpts = [ "--keep-daily 2" ];

@@ -141,6 +141,12 @@
                 default = { };
                 description = "Options for packwiz modpack support.";
               };
+
+              backup = lib.mkOption {
+                type = lib.types.bool;
+                default = false;
+                description = "Enable automatic backups of the server";
+              };
             };
           }
         );
@@ -195,5 +201,21 @@
         }
       ) config.homelab.services.minecraft-server.servers;
     };
+
+    # Backups
+    services.restic.backups = lib.mapAttrs' (serverName: serverConfig:
+      lib.nameValuePair "minecraft-${serverName}" {
+        repositoryFile = config.sops.secrets."restic/repository".path;
+        passwordFile = config.sops.secrets."restic/password".path;
+        timerConfig = {
+          OnCalendar = "03:00";
+        };
+        paths = [ "/srv/minecraft/${serverName}" ];
+        pruneOpts = [ "--keep-daily 2" ];
+
+        backupPrepareCommand = "${pkgs.tmux} -S /run/minecraft/${serverName}.sock send-keys '/say Restarting in 1 minute' C-m && sleep 60 && systemctl stop minecraft-server-${serverName}.service";
+        backupCleanupCommand = "systemctl start minecraft-server-${serverName}.service";
+      }
+    ) (lib.filterAttrs (name: config: config.backup == true) config.homelab.services.minecraft-server.servers);
   };
 }
