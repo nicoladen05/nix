@@ -94,11 +94,11 @@
 
           sxiv
           mpv
-        ]
-        ++ lib.optionals config.packages.coding.enable [
+
           vscode-fhs
           t3-code
-
+        ]
+        ++ lib.optionals config.packages.coding.enable [
           python3
           typst
 
