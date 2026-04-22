@@ -112,6 +112,9 @@ in
   users.users.root.hashedPassword = "$6$FdDJt3LLc3Iu0r14$DKRv42b0IsqkW6OFkWr0WnUoxMPPaFUnSZgBFJKfR4elFeGRU3NfhP1rXbWd.b9073ZucRQrFto130F3eBVjj0";
   users.users.root.hashedPasswordFile = lib.mkForce null;
 
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.timeout = 0;
+
   # Gaming
   gaming = {
     enable = true;
