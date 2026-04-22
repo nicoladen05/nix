@@ -48,6 +48,7 @@ in
     # Essentials
     enable = true;
     nvidia.enable = true;
+    cachy.enable = true;
     sops.enable = true;
     impermanence.enable = true;
 

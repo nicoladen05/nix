@@ -1,6 +1,11 @@
 {
   description = "Nixos config flake";
 
+  nixConfig = {
+    extra-substituters = [ "https://attic.xuyh0120.win/lantian" ];
+    extra-trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -41,11 +46,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flux = {
-      url = "github:IogaMaster/flux";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -83,6 +83,8 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs =

@@ -7,6 +7,7 @@
 }:
 {
   imports = [
+    ./cachy.nix
     ./impermanence.nix
     ./nh.nix
     ./nix.nix
