@@ -43,13 +43,13 @@
         };
       };
 
-      outputs."DP-6" = {
+      outputs."DP-3" = {
         mode = {
           width = 3840;
           height = 2160;
           refresh = 239.996;
         };
-        variable-refresh-rate = "on-demand";
+        variable-refresh-rate = true;
         scale = 1.75;
         transform.rotation = 0;
         position = {
