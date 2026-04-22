@@ -17,15 +17,15 @@
     };
 
     # # This patches a flickering bug with niri on nvidia
-    # nixpkgs.overlays = [
-    #   (final: prev: {
-    #     niri = prev.niri.overrideAttrs (old: {
-    #       patches = (old.patches or [ ]) ++ [
-    #         ./niri-flickering-fix.patch
-    #       ];
-    #     });
-    #   })
-    # ];
+    nixpkgs.overlays = [
+      (final: prev: {
+        niri = prev.niri.overrideAttrs (old: {
+          patches = (old.patches or [ ]) ++ [
+            ./niri-flickering-fix.patch
+          ];
+        });
+      })
+    ];
 
     # Switch boot entry from dms bar
     environment.systemPackages = [ pkgs.efibootmgr ];
