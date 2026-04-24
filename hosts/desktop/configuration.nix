@@ -94,8 +94,6 @@ in
     docker.enable = true;
   };
 
-  virtualisation.docker.enable = true;
-
   # Graphical configuration
   desktop = {
     audio.enable = true;
