@@ -1,13 +1,16 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
-    virtualization.docker.enable = lib.mkEnableOption "enable docker";
+    programs.docker.enable = lib.mkEnableOption "enable docker";
   };
 
-  config = lib.mkIf {
+  config = lib.mkIf config.programs.docker.enable {
     virtualisation.docker.enable = true;
-    hardware.nvidia-container-toolkit.enable = lib.optional config.system.nvidia.enable true;
     users.users."${config.system.userName}".extraGroups = [ "docker" ];
   };
 }

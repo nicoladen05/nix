@@ -8,6 +8,7 @@
     ./nvf
     ./programs
     ./scripts
+    ./virtualisation
 
     ./packages.nix
   ];

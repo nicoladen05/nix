@@ -89,7 +89,10 @@ in
     productivity.enable = true;
   };
 
-  programs.uxplay.enable = true;
+  programs = {
+    uxplay.enable = true;
+    docker.enable = true;
+  };
 
   virtualisation.docker.enable = true;
 

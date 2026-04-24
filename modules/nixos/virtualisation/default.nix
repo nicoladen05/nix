@@ -3,5 +3,6 @@
 {
   imports = [
     ./vfio.nix
+    ./docker.nix
   ];
 }
