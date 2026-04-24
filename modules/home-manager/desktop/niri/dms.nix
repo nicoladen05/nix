@@ -155,7 +155,7 @@
             width = 50;
           }
           {
-            id = "doNotDisturb";
+            id = "plugin_nextBootSelector";
             enabled = true;
             width = 50;
           }
