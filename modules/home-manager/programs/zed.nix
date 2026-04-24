@@ -34,33 +34,17 @@
           enabled_in_text_threads = true;
           mode = "subtle";
         };
-        disable_ai = false;
-        agent = {
-          default_profile = "ask";
-          default_model = {
-            provider = "google";
-            model = "gemini-2.5-flash";
-          };
-          model_parameters = [ ];
-        };
 
-        debugger.dock = "right";
         terminal.dock = "right";
-
-        scrollbar = {
-          axes.horizontal = false;
-          show = "auto";
-        };
 
         relative_line_numbers = "enabled";
         buffer_line_height = "comfortable";
-        project_panel = {
-          file_icons = true;
-          entry_spacing = "comfortable";
-        };
-        icon_theme = "Material Icon Theme";
+
         vim_mode = true;
         base_keymap = "JetBrains";
+
+        buffer_font_family = lib.mkForce config.stylix.fonts.monospace.name;
+        ui_font_size = lib.mkForce 14;
 
         lsp = {
           nixd.settings = {
@@ -73,16 +57,7 @@
       };
 
       userKeymaps = [
-        {
-          context = "Workspace";
-          bindings = { };
-        }
-        {
-          context = "Editor";
-          bindings = {
-            "alt-g c" = "git::Commit";
-          };
-        }
+        # Vim mode remappings
         {
           context = "vim_mode == normal || vim_mode == visual";
           bindings = {
@@ -112,11 +87,29 @@
           };
         }
         {
-          context = "Editor && mode == full";
+          context = "vim_mode == visual";
           bindings = {
-            ctrl-p = "file_finder::Toggle";
+            shift-s = "vim::PushAddSurrounds";
           };
         }
+
+        {
+          context = "Editor && !menu";
+          bindings = {
+            ctrl-p = "file_finder::Toggle";
+            "ctrl-f" = "buffer_search::Deploy";
+            "ctrl-c" = "editor::Copy";
+            "ctrl-x" = "editor::Cut";
+            "ctrl-a" = "editor::SelectAll";
+            "ctrl-y" = "editor::Undo";
+            "ctrl-t" = "project_symbols::Toggle";
+            "ctrl-o" = "workspace::Open";
+            "ctrl-s" = "workspace::Save";
+            "ctrl-b" = "workspace::ToggleLeftDock";
+            "ctrl-r" = "projects::OpenRecent";
+          };
+        }
+
       ];
 
       userTasks = [
