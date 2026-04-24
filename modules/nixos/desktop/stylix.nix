@@ -72,8 +72,8 @@
 
     stylix.fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.zed-mono;
-        name = "ZedMono Nerd Font";
+        package = pkgs.maple-mono.NF-CN;
+        name = "Maple Mono NF CN";
       };
       sansSerif = {
         package = pkgs.inter;
