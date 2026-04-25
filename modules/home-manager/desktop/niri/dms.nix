@@ -46,6 +46,8 @@
 
         powerMenuDefaultAction = "lock";
 
+        blurWallpaperOnOverview = true;
+
         barConfigs = [
           {
             id = "default";

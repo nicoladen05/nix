@@ -68,19 +68,13 @@
         ];
         default-column-width.proportion = 0.5;
 
+        background-color = "transparent";
+
         focus-ring = {
           enable = true;
           width = 1;
           active.color = lib.mkForce "#5f6368";
           inactive.color = lib.mkForce "#505050";
-        };
-
-        border = {
-          enable = false;
-          width = 1;
-          active.color = lib.mkForce "#8f949b";
-          inactive.color = lib.mkForce "#5f6368";
-          urgent.color = lib.mkForce "#9b0000";
         };
 
         shadow = {
@@ -127,6 +121,22 @@
             bottom-right = 15.0;
           };
           clip-to-geometry = true;
+        }
+      ];
+
+      layer-rules = [
+        # Wallpaper on overview
+        {
+          matches = [
+            { namespace = "^quickshell$"; }
+          ];
+          place-within-backdrop = true;
+        }
+        {
+          matches = [
+            { namespace = "dms:blurwallpaper"; }
+          ];
+          place-within-backdrop = true;
         }
       ];
 
