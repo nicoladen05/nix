@@ -113,6 +113,10 @@
                       type = lib.types.attrsOf lib.types.package;
                       default = { };
                     };
+                    modpack = lib.mkOption {
+                      type = lib.types.package;
+                      default = null;
+                    }
                   };
                 };
                 default = { };
@@ -191,7 +195,10 @@
                 name = "mods/${name}.jar";
                 value = mod;
               }) serverConfig.mods.mods
-            );
+            ) // lib.optionalAttrs (serverConfig.modpack != null) {
+              mods = "${serverConfig.modpack}/mods";
+              config = "${serverConfig.modpack}/config";
+            };
         }
       ) config.homelab.services.minecraft-server.servers;
     };
