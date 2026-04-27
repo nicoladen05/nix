@@ -80,6 +80,15 @@
                 '';
               };
 
+              jre = lib.mkOption {
+                type = lib.types.nullOr lib.types.package;
+                default = null;
+                description = ''
+                  The Java Runtime Environment (JRE) to use for the Minecraft server.
+                  Null means use the server default.
+                '';
+              };
+
               properties = lib.mkOption {
                 type = lib.types.attrs;
                 default = { };
@@ -162,7 +171,13 @@
         let
           # compute attribute name for package lookup, e.g. "fabric-1_21_7"
           attrName = "${serverConfig.type}${serverConfig.version}";
-          package = builtins.getAttr attrName pkgs.minecraftServers;
+          package = if serverConfig.jre != null then
+            (builtins.getAttr attrName pkgs.minecraftServers).override {
+              jre_headless = serverConfig.jre;
+            }
+          else
+            builtins.getAttr attrName pkgs.minecraftServers;
+
           modpack =
             if (serverConfig.packwiz != null) && serverConfig.packwiz.enable then
               pkgs.fetchPackwizModpack {

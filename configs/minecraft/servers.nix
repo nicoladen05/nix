@@ -35,6 +35,7 @@ in
     type = "fabric";
     version = "26.1";
     ram = "4G";
+    jre = pkgs.javaPackages.compiler.temurin-bin.jre-25;
 
     properties.gamemode = "creative";
 
