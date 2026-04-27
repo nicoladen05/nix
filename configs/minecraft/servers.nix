@@ -13,16 +13,36 @@ in
     version = "1.21.1";
     ram = "4G";
     whitelist = joinedWhitelist;
-    mods = {
+
+    mods = with mods.v_1_21_1; {
       enable = true;
-      mods = mods.default // mods.cheaty // {
-        bbl-casting = mods.bbl-casting;
-        bblcore = mods.bblcore;
-        car = mods.car;
-        ciggycraft = mods.ciggycraft;
-        jetpack = mods.jetpack;
-        many-more-ores-and-crafts = mods.many-more-ores-and-crafts;
-        ultimate-plane-mod = mods.ultimate-plane-mod;
+      mods = default // cheaty // {
+        inherit bbl-casting;
+        inherit bblcore;
+        inherit car;
+        inherit ciggycraft;
+        inherit jetpack;
+        inherit many-more-ores-and-crafts;
+        inherit ultimate-plane-mod;
+      };
+    };
+  };
+
+  jonas = {
+    host = "vps";
+    domain = "mc2.nicoladen.dev";
+    port = 25566;
+    type = "fabric";
+    version = "26.1";
+    ram = "4G";
+
+    properties.gamemode = "creative";
+
+    mods = with mods.latest; {
+      enable = true;
+      mods = default // building // {
+        inherit macaws-furniture;
+        inherit motion-capture;
       };
     };
   };

@@ -66,11 +66,8 @@
                     let
                       parts = builtins.splitVersion v;
                     in
-                    if builtins.length parts < 3 then
-                      throw "Version must be in the format X.Y.Z"
-                    else
-                      # Transform version string (e.g. "1.21.7") into format -X_XX_X (e.g. "-1_21_7")
-                      "-" + builtins.concatStringsSep "_" parts;
+                    # Transform version string (e.g. "1.21.7") into format -X_XX_X (e.g. "-1_21_7")
+                    "-" + builtins.concatStringsSep "_" parts;
               };
 
               ram = lib.mkOption {
@@ -114,9 +111,9 @@
                       default = { };
                     };
                     modpack = lib.mkOption {
-                      type = lib.types.package;
+                      type = lib.types.nullOr lib.types.package;
                       default = null;
-                    }
+                    };
                   };
                 };
                 default = { };
@@ -190,12 +187,12 @@
             lib.optionalAttrs ((serverConfig.packwiz != null) && serverConfig.packwiz.enable) {
               mods = "${modpack}/mods";
             }
-            // lib.optionalAttrs (serverConfig.mods.enable) (
+            // lib.optionalAttrs (serverConfig.mods.enable && serverConfig.mods.mods != { }) (
               lib.mapAttrs' (name: mod: {
                 name = "mods/${name}.jar";
                 value = mod;
               }) serverConfig.mods.mods
-            ) // lib.optionalAttrs (serverConfig.modpack != null) {
+            ) // lib.optionalAttrs (serverConfig.mods.enable && serverConfig.mods.modpack != null) {
               mods = "${serverConfig.modpack}/mods";
               config = "${serverConfig.modpack}/config";
             };
