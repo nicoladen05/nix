@@ -87,7 +87,7 @@ in
         settings.tokenFile = config.sops.templates."glance/vps_remote_env".path;
       };
 
-      minio.enable = true;
+      # minio.enable = true;
 
       pyrodactyl.enable = false;
     };
@@ -140,6 +140,11 @@ in
   programs.mosh = {
     enable = true;
     openFirewall = true;
+  };
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql84;
   };
 
   services.fail2ban.enable = true;
