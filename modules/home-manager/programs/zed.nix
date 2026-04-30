@@ -21,7 +21,7 @@
         pkgs.nixd
       ];
 
-      mutableUserSettings = false;
+      mutableUserSettings = true;
       mutableUserKeymaps = false;
       mutableUserTasks = false;
       mutableUserDebug = false;
