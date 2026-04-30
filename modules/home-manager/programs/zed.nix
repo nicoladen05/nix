@@ -46,8 +46,6 @@
         buffer_font_family = lib.mkForce config.stylix.fonts.monospace.name;
         ui_font_size = lib.mkForce 14;
 
-        theme = lib.mkForce "Gruvbox Light Soft";
-
         lsp = {
           nixd.settings = {
             nixos.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.desktop.options";

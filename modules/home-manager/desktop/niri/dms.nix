@@ -172,6 +172,10 @@
       session = {
         weatherLocation = "Ehmen, Niedersachsen";
         weatherCoordinates = "52.3990844,10.6992485";
+
+        hiddenTrayIds = [
+          "blueman::Bluetooth Active"
+        ];
       };
     };
 
