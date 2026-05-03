@@ -13,6 +13,7 @@
   config = lib.mkIf config.home-manager.zed.enable {
     programs.zed-editor = {
       enable = true;
+      package = pkgs.zed-editor-fhs;
 
       extraPackages = [
         pkgs.jdt-language-server
