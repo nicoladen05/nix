@@ -92,6 +92,7 @@
       spawn-at-startup = [
         { sh = "swaybg -i ~/.config/niri/wallpaper.jpg -m fill"; }
         { argv = [ "noctalia-shell" ]; }
+        { sh = "ibus-daemon -drx"; }
       ];
 
       hotkey-overlay.skip-at-startup = true;

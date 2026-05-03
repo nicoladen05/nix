@@ -85,6 +85,12 @@ in
         DMS_GREET_REMEMBER_LAST_SESSION = "true";
       };
 
+      # Unicode input for german
+      i18n.inputMethod = {
+        enable = true;
+        type = "ibus";
+      };
+
       # Boot Animation
       boot = {
         plymouth.enable = true;
