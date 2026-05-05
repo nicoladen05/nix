@@ -43,11 +43,11 @@
         };
       };
 
-      outputs."DP-3" = {
+      outputs."HDMI-A-1" = {
         mode = {
           width = 3840;
           height = 2160;
-          refresh = 239.996;
+          refresh = 239.995;
         };
         variable-refresh-rate = true;
         scale = 1.75;
