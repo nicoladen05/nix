@@ -6,7 +6,7 @@
   ...
 }:
 let
-  greeterOutputName = "DP-3";
+  greeterOutputName = "HDMI-A-1";
   greeterNiriConfig = ''
     cursor {
         xcursor-theme "macOS"
@@ -20,7 +20,7 @@ let
     }
 
     output "${greeterOutputName}" {
-        mode "3840x2160@239.996"
+        mode "3840x2160@239.995"
         scale 1.75
         transform "normal"
         position x=0 y=0

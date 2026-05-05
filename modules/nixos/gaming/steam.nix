@@ -22,10 +22,10 @@
         enable = true;
       };
 
-      # gamescope = {
-      #   enable = true;
-      #   capSysNice = true;
-      # };
+      gamescope = {
+        enable = true;
+        capSysNice = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [
