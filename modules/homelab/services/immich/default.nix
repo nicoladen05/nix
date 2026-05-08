@@ -51,14 +51,14 @@ in
       "${cfg.url}:444" = {
         extraConfig = ''
           import cloudflare_dns
-          reverse_proxy 127.0.0.1:${builtins.toString cfg.port}
+          reverse_proxy 127.0.0.1:${toString cfg.port}
         '';
       };
 
       "immich.${config.homelab.internalDomain}" = {
         extraConfig = ''
           import cloudflare_dns
-          reverse_proxy 127.0.0.1:${builtins.toString cfg.port}
+          reverse_proxy 127.0.0.1:${toString cfg.port}
         '';
       };
     };

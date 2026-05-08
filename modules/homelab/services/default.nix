@@ -19,6 +19,7 @@
     ./minecraft
     ./minio
     ./n8n
+    ./norish
     ./ocis
     ./openwebui
     ./paperless

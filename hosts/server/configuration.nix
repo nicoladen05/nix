@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -45,8 +46,6 @@ in
     services = {
       audiobookshelf.enable = true;
 
-      assetto-corsa-server.enable = false;
-
       backup = {
         enable = true;
         repositoryFile = config.sops.secrets."restic/repository".path;
@@ -77,6 +76,8 @@ in
       };
 
       media.enable = true;
+
+      norish.enable = true;
 
       pihole.enable = true;
 
@@ -181,6 +182,8 @@ in
       interface = "enp1s0";
     };
   };
+
+  services.postgresql.package = pkgs.postgresql_17;
 
   # Users
   users.users.root.hashedPassword = "$6$FdDJt3LLc3Iu0r14$DKRv42b0IsqkW6OFkWr0WnUoxMPPaFUnSZgBFJKfR4elFeGRU3NfhP1rXbWd.b9073ZucRQrFto130F3eBVjj0";

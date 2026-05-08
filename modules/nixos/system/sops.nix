@@ -36,6 +36,13 @@
 
     sops.secrets."cloudflare/api_token" = { };
 
+    sops.secrets."openai/api_key" = { };
+
+    sops.templates."norish/env".content = ''
+      AI_API_KEY=${config.sops.placeholder."openai/api_key"}
+      TRANSCRIPTION_API_KEY=${config.sops.placeholder."openai/api_key"}
+    '';
+
     sops.secrets."homeassistant/url" = { };
     sops.secrets."homeassistant/token" = { };
 
