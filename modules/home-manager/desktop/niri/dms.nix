@@ -21,7 +21,7 @@
       niri = {
         enableSpawn = true;
         includes = {
-          enable = true;
+          enable = false;
           override = false;
         };
       };
