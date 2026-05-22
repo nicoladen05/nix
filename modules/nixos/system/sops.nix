@@ -78,5 +78,7 @@
     sops.secrets."glance_restic/url" = { };
 
     sops.secrets."crowdsec/enrollment_key" = { };
+
+    sops.secrets."ntfy/topic" = { };
   };
 }

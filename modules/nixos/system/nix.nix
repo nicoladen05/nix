@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   config = lib.mkIf config.system.enable {
@@ -38,6 +38,26 @@
       flags = [ "-L --refresh" ];
       upgrade = false;
       allowReboot = true;
+    };
+
+    # Notify on upgrade failure
+    systemd.services.nixos-upgrade.onFailure = [ "nixos-upgrade-failure-notification.service" ];
+
+    systemd.services.nixos-upgrade-failure-notification = {
+      description = "Send a notification for failed NixOS upgrades";
+
+      serviceConfig.Type = "oneshot";
+
+      script = ''
+        NTFY_URL="$(cat ${config.sops.secrets."ntfy/topic".path})"
+        LOGS="$(${pkgs.systemd}/bin/journalctl -u nixos-upgrade.service -n 50 --no-pager --output=short-iso)"
+
+        ${pkgs.curl}/bin/curl \
+            -H "Title: Auto-upgrade failed: ${config.system.hostName}" \
+            -H "Priority: high" \
+            -d "$LOGS" \
+            "$NTFY_URL"
+      '';
     };
   };
 }
