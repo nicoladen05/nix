@@ -32,8 +32,6 @@ in
     inherit userName;
     inherit hostName;
 
-    passwordlessRebuild = true;
-
     shell = pkgs.zsh;
 
     udpPorts = [ 24454 ];
@@ -128,14 +126,6 @@ in
   };
 
   boot.kernelParams = [ "net.ifnames=0" ];
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
 
   programs.mosh = {
     enable = true;
