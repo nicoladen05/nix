@@ -28,12 +28,14 @@ in
   system = {
     enable = true;
     sops.enable = true;
+    ssh.enable = true;
 
     inherit userName;
     inherit hostName;
 
     shell = pkgs.zsh;
 
+    tcpPorts = [ 22 ];
     udpPorts = [ 24454 ];
   };
 

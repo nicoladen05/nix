@@ -4,7 +4,7 @@ let
   cfg = config.system.security;
 in
 {
-  options.scaffhold = {
+  options.system.security = {
     enable = lib.mkEnableOption "Enable security/hardening" // {
       default = true;
     };
